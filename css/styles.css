@@ -604,4 +604,8 @@ footer .footer-legal {
     .container-1 img {
         display: none;
     }
+
+    .about {
+        padding: 0;
+    }
 }
