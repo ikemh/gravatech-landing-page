@@ -608,4 +608,8 @@ footer .footer-legal {
     .about {
         padding: 0;
     }
+
+    header .logo img {
+        max-width: 180px;
+    }
 }
