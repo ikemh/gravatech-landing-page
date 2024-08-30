@@ -617,6 +617,7 @@ footer .footer-legal {
         background: url(../images/cover-mobile.png);
         background-size: cover;
         background-position: right;
+        height: 60vh;
     }
 
     .hero .cta {
