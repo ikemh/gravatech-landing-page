@@ -554,6 +554,36 @@ footer .footer-legal {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .service-items {
+        display: flex;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
+    .service-item {
+        min-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .carousel-navigation {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: #717171;
+    }
+
     header .container {
         text-align: center;
     }

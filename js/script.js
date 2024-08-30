@@ -55,3 +55,35 @@ document.querySelectorAll('.menu-ancora a').forEach(anchor => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll(".service-item");
+    const dots = document.querySelectorAll(".dot");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        // Verifica se o índice está dentro do intervalo
+        if (index >= 0 && index < items.length) {
+            // Define o deslocamento para mostrar o slide
+            const offset = -index * 100;
+            items.forEach(item => item.style.transform = `translateX(${offset}%)`);
+
+            // Atualiza o estado das bolinhas
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+
+            currentIndex = index;
+        }
+    }
+
+    // Configura os eventos de clique nas bolinhas
+    dots.forEach(dot => {
+        dot.addEventListener("click", function() {
+            const index = parseInt(dot.getAttribute("data-index"));
+            showSlide(index);
+        });
+    });
+
+    // Inicializa o carrossel mostrando o primeiro slide
+    showSlide(currentIndex);
+});
