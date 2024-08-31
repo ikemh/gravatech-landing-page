@@ -148,3 +148,14 @@ window.addEventListener("load", function() {
         }, 500); // 500ms para suavizar a transição
     }, animationDuration); // Espera o tempo da animação antes de remover o loader
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const heroContainer = document.querySelector(".hero .container");
+
+    if (window.innerWidth <= 768) { // Verifica se o dispositivo é mobile
+        setTimeout(function() {
+            heroContainer.classList.add("animate");
+        }, 100); // Pequeno atraso para garantir que a animação seja visível
+    }
+});
