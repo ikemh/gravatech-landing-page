@@ -18,10 +18,23 @@ h1, h2, h3, h4, h5, h6, p, a, span, div {
 
 /* Estilos globais */
 body {
+
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: rgb(30, 24, 39);
+    color: #fff;
+    background-color: #151515;
+}
+
+body::before {
+    content: "";
+    top: 100px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('../images/cover-mobile.png') no-repeat center center;
+    background-size: cover;
+    background-position: right;
+    z-index: -1;
 }
 
 /* Container padrão */
@@ -31,11 +44,31 @@ body {
     margin: 0;
     padding: 0 20px;
 }
+
+.blur-mask {
+    position: relative;
+    z-index: 1;
+    background-color: #00000030;
+}
+
+.blur-mask::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit the parent background */
+    backdrop-filter: blur(8px); /* Ajuste o valor do blur conforme necessário */
+    z-index: -1;
+    border-radius: 10px; /* Combine com a borda da .container */
+}
+
 .small-video {
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    border: 2vh solid #ffffff30;
+    border: 1vh solid #ffffff10;
     object-fit: cover; /* Mantém o vídeo ajustado ao contêiner de 100x100 sem distorção */
 }
 /* Cabeçalho */
@@ -44,12 +77,14 @@ header {
     justify-content: center;
     position: sticky;
     top: 0;
-    background-color: rgb(30, 24, 39);
+    background-color: #151515;
     color: #fff;
     padding: 0;
     z-index: 1000;
     transition: background-color 1.5s ease, backdrop-filter 1.5s ease, box-shadow 0.3s ease;
     min-height: 6rem;
+    box-shadow: 0 1px 2px 1px #ffffff05;
+    padding: 0.5rem 0;
 }
 
 .container-1 {
@@ -61,15 +96,16 @@ header {
 }
 
 header.sticky-active {
-    background-color: rgba(30, 24, 39, 0.7); /* Fundo semi-transparente */
-    backdrop-filter: blur(10px); /* Desfoque */
-    box-shadow: 0 1px 2px 1px #33333350;
+    background-color: #15151599; /* Fundo semi-transparente */
+    backdrop-filter: blur(15px); /* Desfoque */
+    box-shadow: 0 1px 2px 1px #ffffff08;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 0;
 }
 
 header .logo {
@@ -107,15 +143,16 @@ header nav ul li a:hover {
     justify-content: center;
 }
 
-.persuasive-section h2 {
+.persuasive-section h2, h2{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 40px;
     color: #fff; /* Cor personalizada */
 }
 .persuasive-section .container {
     margin: 0;
     width: auto;
+    padding: 0;
 }
 .persuasive-section .content {
     display: flex;
@@ -153,8 +190,6 @@ header nav ul li a:hover {
 
 
 .hero-alt {
-    background:
-                url('../images/cover2.png');
     background-size: cover; /* Mantém o tamanho original da imagem */
     background-position: left;
     display: flex;
@@ -184,13 +219,10 @@ header nav ul li a:hover {
 .hero {
     display: flex;
     justify-content: center;
-    background:
-                url('../images/cover.png');
     background-size: cover; /* Mantém o tamanho original da imagem */
     background-position: right;
-    display: flex;
     color: #fff;
-    padding: 2rem 0;
+    padding: 4rem 0;
     text-align: left;
     height: 70vh;
     max-height: 40rem;
@@ -199,7 +231,6 @@ header nav ul li a:hover {
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    padding-right: 37%;
 }
 
 .hero p {
@@ -209,9 +240,14 @@ header nav ul li a:hover {
 
 
 .hero .container {
+    text-align: center;
     position: relative;
     z-index: 2; /* Garante que o texto fique acima do overlay */
     align-content: center;
+    width: 97%;
+    border-radius: 1rem;
+    padding: 0;
+    padding-left: 1rem;
 }
 
 .hero .cta {
@@ -235,9 +271,10 @@ header nav ul li a:hover {
 /* Seção de Serviços */
 .services {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 6rem 0;
-    background-color: #e0e0e0;
+    padding: 2rem 0;
 }
 
 .services h2 {
@@ -257,7 +294,6 @@ header nav ul li a:hover {
     text-align: center;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    box-shadow: 0 0 50px 2px #ffffff95;
 }
 
 .service-item:hover {
@@ -271,8 +307,10 @@ header nav ul li a:hover {
 
 .service-item p {
     font-size: 1rem;
-    color: #666;
+    color: #aaa;
 }
+
+
 
 /* Seção Portfólio */
 .portfolio {
@@ -317,14 +355,13 @@ header nav ul li a:hover {
 
 /* Seção de Contato */
 #contato {
-    color: rgb(30, 24, 39);
+    color: #fff;
     display: flex;
     justify-content: center;
 }
 
 .contact {
-    padding: 60px 0;
-    background-color: #eaeaea;
+    padding-bottom: 60px;
 }
 
 .contact h2 {
@@ -334,12 +371,11 @@ header nav ul li a:hover {
 }
 
 form {
+    color: white;
     max-width: 600px;
     margin: 0 auto;
-    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 50px 0 #ffffff;
 }
 
 .form-group {
@@ -354,10 +390,11 @@ form {
 
 .form-group input,
 .form-group textarea {
+    background: #00000050;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc80;
     font-size: 1rem;
 }
 
@@ -378,6 +415,7 @@ form .cta {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     border: 0;
+    width: 100%;
 }
 
 form .cta:hover {
@@ -388,7 +426,6 @@ form .cta:hover {
 footer {
     display: flex;
     justify-content: center;
-    background-color: rgb(30, 24, 39);
     color: #fff;
     padding-top: 40px;
     text-align: center;
@@ -480,12 +517,10 @@ footer .footer-legal {
 }
 
 .whatsapp-button a img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s ease;
-    filter: saturate(1);
+    filter: saturate(0.9);
 }
 
 .whatsapp-button a img:hover {
@@ -506,7 +541,7 @@ footer .footer-legal {
 
 .menu-ancora li {
     position: relative;
-    margin-bottom: 4px; /* Espaçamento entre os itens */
+    margin: 2px 0; /* Espaçamento entre os itens */
     padding-left: 20px; /* Espaço para as bolinhas à esquerda */
 }
 
@@ -518,15 +553,16 @@ footer .footer-legal {
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
-    background-color: #ffffff40; /* Cor padrão da bolinha (cinza) */
+    background-color: #ffffff15; /* Cor padrão da bolinha (cinza) */
     border-radius: 50%;
     z-index: 1;
     transition: background-color 0.3s ease;
 }
 
 .menu-ancora li.active::before {
-    background-color: #FFC857; /* Cor da bolinha ativa (amarela) */
+    background-color: #ffffff70; /* Cor da bolinha ativa (amarela) */
 }
+
 
 .menu-ancora li::after {
     content: '';
@@ -534,7 +570,7 @@ footer .footer-legal {
     left: 4px; /* Posiciona a linha fina abaixo da bolinha */
     top: 70%; /* Inicia a linha logo abaixo da bolinha */
     width: 2px; /* Espessura da linha */
-    background-color: #cccccc30; /* Cor da linha */
+    background-color: #ffffff09; /* Cor da linha */
     height: calc(75%); /* Ajusta a altura para conectar as bolinhas */
     z-index: 0;
 }
@@ -544,13 +580,19 @@ footer .footer-legal {
 }
 
 .menu-ancora li a {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #ffffff20;
+    font-weight: 500;
+    width: 90px;
+    display: flex;
     text-decoration: none;
     color: #fff; /* Cor do texto */
     padding-left: 10px; /* Espaçamento entre a bolinha e o texto */
 }
 
 .menu-ancora li a:hover {
-    color: #ffffff95; /* Cor do texto ao passar o mouse */
+    color: #f0f0f0; /* Cor do texto ao passar o mouse */
 }
 
 /* Media Queries */
@@ -559,11 +601,18 @@ footer .footer-legal {
         display: flex;
         overflow: hidden;
         scroll-behavior: smooth;
+        gap: 20px;
+        scroll-snap-type: x mandatory;
     }
 
     .service-item {
         min-width: 100%;
         flex: 0 0 100%;
+        padding: 2rem 1rem;
+        text-align: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        scroll-snap-align: center;
     }
 
     .carousel-navigation {
@@ -587,6 +636,7 @@ footer .footer-legal {
 
     header .container {
         text-align: center;
+        padding-right: 0;
     }
 
     header nav ul {
@@ -594,16 +644,33 @@ footer .footer-legal {
         margin-top: 10px;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
-
     .hero p {
         font-size: 1rem;
     }
 
+
+    .container-1 {
+        align-self: center;
+    }
     .container-1 img {
-        display: none;
+        width: 300px;
+    }
+
+    #about {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    .map {
+        width: 100%;
+    }
+
+    .persuasive-section .point {
+        padding: 1rem;
+        border-radius: 2rem;
+    }
+
+    .persuasive-section {
+        flex-direction: column;
     }
 
     .about {
@@ -611,33 +678,26 @@ footer .footer-legal {
     }
 
     header .logo img {
-        max-width: 180px;
+        width: 140px;
     }
 
     .hero {
-        background: url(../images/cover-mobile.png);
-        background-size: cover;
-        background-position: right;
-        height: 100%;
+        height: 60vh;
     }
 
     .hero .cta {
-        padding: 10px;
+        padding: 10px 20px;
         font-size: 0.9rem;
 }
 
 .hero p {
-    padding-right: 37%;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .hero h1 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
-.service-item {
-    padding: 0;
-}
 
 .service-item p {
     font-size: 1.1rem;
