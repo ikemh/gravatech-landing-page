@@ -57,33 +57,78 @@ document.querySelectorAll('.menu-ancora a').forEach(anchor => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const items = document.querySelectorAll(".service-item");
+    const itemsContainer = document.querySelector(".service-items");
     const dots = document.querySelectorAll(".dot");
     let currentIndex = 0;
+    let autoSlideInterval;
+    let userInteracted = false;
 
     function showSlide(index) {
-        // Verifica se o índice está dentro do intervalo
-        if (index >= 0 && index < items.length) {
-            // Define o deslocamento para mostrar o slide
-            const offset = -index * 100;
-            items.forEach(item => item.style.transform = `translateX(${offset}%)`);
+        itemsContainer.scrollTo({
+            left: index * itemsContainer.offsetWidth,
+            behavior: "smooth"
+        });
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+        currentIndex = index;
+    }
 
-            // Atualiza o estado das bolinhas
-            dots.forEach(dot => dot.classList.remove("active"));
-            dots[index].classList.add("active");
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            if (!userInteracted) {  // Verifica se o usuário não interagiu manualmente
+                if (currentIndex < dots.length - 1) {
+                    showSlide(currentIndex + 1);
+                } else {
+                    showSlide(0);
+                }
+            }
+        }, 10000); // Avança a cada 10 segundos
+    }
 
-            currentIndex = index;
+    function resetAutoSlide() {
+        if (!userInteracted) {  // Reinicia o temporizador apenas se não houve interação manual
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
         }
     }
 
-    // Configura os eventos de clique nas bolinhas
-    dots.forEach(dot => {
-        dot.addEventListener("click", function() {
-            const index = parseInt(dot.getAttribute("data-index"));
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
             showSlide(index);
+            userInteracted = true; // Marca que houve interação manual
+            clearInterval(autoSlideInterval); // Para o auto slide
         });
     });
 
-    // Inicializa o carrossel mostrando o primeiro slide
-    showSlide(currentIndex);
+    // Navegação por gestos (swipe)
+    let startX = 0;
+
+    itemsContainer.addEventListener("touchstart", function(e) {
+        startX = e.touches[0].clientX;
+    });
+
+    itemsContainer.addEventListener("touchend", function(e) {
+        let endX = e.changedTouches[0].clientX;
+        if (startX > endX + 50) {
+            if (currentIndex < dots.length - 1) {
+                showSlide(currentIndex + 1);
+            } else {
+                showSlide(0);  // Volta ao primeiro slide após o último
+            }
+            userInteracted = true; // Marca que houve interação manual
+            clearInterval(autoSlideInterval); // Para o auto slide
+        } else if (startX < endX - 50) {
+            if (currentIndex > 0) {
+                showSlide(currentIndex - 1);
+            }
+            userInteracted = true; // Marca que houve interação manual
+            clearInterval(autoSlideInterval); // Para o auto slide
+        }
+    });
+
+    // Inicializa o carrossel e o temporizador se a largura da tela for de 768px ou menos (Mobile)
+    if (window.innerWidth <= 768) {
+        showSlide(currentIndex);
+        startAutoSlide();
+    }
 });
