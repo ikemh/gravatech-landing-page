@@ -92,7 +92,7 @@ header {
 }
 
 .container-1 img {
-    filter: saturate(0.5);
+    filter: saturate(0.7);
 }
 
 header.sticky-active {
@@ -162,7 +162,7 @@ header nav ul li a:hover {
 
 .persuasive-section .point h3 {
     font-size: 1.8rem;
-    color: #3A5068; /* Cor de destaque */
+    color: #4239AA; /* Cor de destaque */
 }
 
 .persuasive-section .point p {
@@ -303,6 +303,7 @@ header nav ul li a:hover {
 .service-item h3 {
     margin-bottom: 10px;
     font-size: 1.5rem;
+    color: #AA9939;
 }
 
 .service-item p {
@@ -560,7 +561,7 @@ footer .footer-legal {
 }
 
 .menu-ancora li.active::before {
-    background-color: #ffffff70; /* Cor da bolinha ativa (amarela) */
+    background-color: #AA9939; /* Cor da bolinha ativa (amarela) */
 }
 
 
