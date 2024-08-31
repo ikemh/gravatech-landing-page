@@ -340,7 +340,6 @@ header nav ul li a:hover {
 }
 
 
-
 /* Seção Portfólio */
 .portfolio {
     padding: 60px 0;
@@ -449,6 +448,15 @@ form .cta {
 
 form .cta:hover {
     background-color: #e6b800;
+}
+
+.iti__country.iti__highlight {
+    background: #303030 !important;
+}
+
+.iti__country {
+    background: #151515;
+    border-top: 1px solid #ffffff15;
 }
 
 /* Rodapé */
@@ -733,4 +741,6 @@ footer .footer-legal {
 .service-item p {
     font-size: 1.1rem;
 }
+
 }
+
