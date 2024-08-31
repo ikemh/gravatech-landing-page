@@ -483,8 +483,9 @@ footer .footer-legal {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease;
+    filter: saturate(1);
 }
 
 .whatsapp-button a img:hover {
@@ -632,5 +633,13 @@ footer .footer-legal {
 
 .hero h1 {
     font-size: 1.4rem;
+}
+
+.service-item {
+    padding: 0;
+}
+
+.service-item p {
+    font-size: 1.1rem;
 }
 }
