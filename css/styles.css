@@ -23,7 +23,6 @@ body {
     line-height: 1.6;
     color: #fff;
     background-color: #151515;
-    height: 100vh;
     overflow: hidden; /* Evita que o conteúdo role enquanto carrega */
 }
 
