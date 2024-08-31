@@ -132,3 +132,19 @@ document.addEventListener("DOMContentLoaded", function() {
         startAutoSlide();
     }
 });
+
+window.addEventListener("load", function() {
+    const loader = document.getElementById("loader");
+    
+    // Duração da animação em milissegundos (2s = 2000ms)
+    const animationDuration = 1500;
+
+    // Garantir que a animação tenha tempo para completar pelo menos um ciclo
+    setTimeout(function() {
+        loader.style.opacity = 0;
+        setTimeout(function() {
+            loader.style.display = "none";
+            document.body.style.overflow = "auto"; // Permite a rolagem novamente após o carregamento
+        }, 500); // 500ms para suavizar a transição
+    }, animationDuration); // Espera o tempo da animação antes de remover o loader
+});
