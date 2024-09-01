@@ -315,6 +315,7 @@ header nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 1rem;
 }
 
 .service-item {
@@ -424,6 +425,8 @@ form {
     border-radius: 5px;
     border: 1px solid #cccccc80;
     font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
 }
 
 .form-group textarea {
