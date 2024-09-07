@@ -22,19 +22,28 @@ body {
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.6;
     color: #fff;
-    background-color: #151515;
+    background-color: #000;
     overflow: hidden; /* Evita que o conteúdo role enquanto carrega */
 }
 
-body::before {
-    content: "";
+.background-container {
     position: fixed;
     width: 100%;
+    top: 2rem;
     height: 100%;
-    background: url('../images/cover-mobile.png') no-repeat center center;
-    background-size: cover;
-    background-position: right;
     z-index: -1;
+    overflow: visible; /* Garante que a imagem não vaze da div */
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover; /* Faz a imagem cobrir toda a área da div */
+    filter: brightness(0.7); /* Aplica o filtro de brilho */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Estilos para o loader */
@@ -44,7 +53,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000099; /* Fundo escuro para combinar com o tema */
+    background-color: #00000050; /* Fundo escuro para combinar com o tema */
     backdrop-filter: blur(50px);
     display: flex;
     justify-content: center;
@@ -69,13 +78,13 @@ body::before {
     max-width: 1400px;
     width: 100%;
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .blur-mask {
     position: relative;
     z-index: 1;
-    background-color: #00000060;
+    background-color: #00000055;
 }
 
 .blur-mask::before {
@@ -89,14 +98,13 @@ body::before {
     backdrop-filter: blur(15px); /* Ajuste o valor do blur conforme necessário */
     z-index: -1;
     border-radius: 10px; /* Combine com a borda da .container */
-    border: 1px solid #dddddd40;
+    border: 1px solid #dddddd60;
 }
 
 .small-video {
     width: 250px;
     height: 250px;
-    border-radius: 100%;
-    border: 1vh solid #ffffff10;
+    border-radius: 50%;  
     object-fit: cover; /* Mantém o vídeo ajustado ao contêiner de 100x100 sem distorção */
 }
 /* Cabeçalho */
@@ -107,25 +115,18 @@ header {
     top: 0;
     color: #fff;
     z-index: 1000;
-    transition: background-color 1.5s ease, backdrop-filter 1.5s ease, box-shadow 0.3s ease;
+    transition: background-color 2s ease, backdrop-filter 2s ease, box-shadow 0.3s ease;
     min-height: 6rem;
-    border-bottom: 1px solid #dddddd10;
     padding: 0.5rem 0;
     border-bottom-left-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
 }
 
-.container-1 {
-    align-content: center;
-}
-
-.container-1 img {
-    filter: saturate(0.7);
-}
-
 header.sticky-active {
-    background-color: #00000000; /* Fundo semi-transparente */
-    backdrop-filter: blur(8px); /* Desfoque */
+    background-color: #ffffff05; /* Fundo semi-transparente */
+    backdrop-filter: blur(5px); /* Desfoque */
+    border-bottom: 1px solid #dddddd15;
+
 }
 
 .header-container {
@@ -138,12 +139,19 @@ header.sticky-active {
 
 header .logo {
     display: flex;
+    position: relative;
 }
 
 header .logo img {
     max-width: 220px;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    position: relative;
+    z-index: 1;
 }
+
+
 
 header nav ul {
     list-style: none;
@@ -161,59 +169,110 @@ header nav ul li a {
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #ffcc00;
-}
 
 .persuasive-section {
-    padding: 60px 20px;
+    padding: 60px 0 !important;
     color: #fff;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-.persuasive-section h2, h2{
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #fff; /* Cor personalizada */
+.persuasive-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
 }
+
 .persuasive-section .container {
-    margin: 0;
-    width: auto;
+    align-self: center;
     padding: 0;
 }
+
 .persuasive-section .content {
     display: flex;
-    flex-direction: column;
     gap: 30px;
+    padding-top: 0.6rem !important;
+    justify-content: space-between;
+}
+
+.persuasive-section .point {
+    text-align: center;
+    border-radius: 1rem;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 350px;
+}
+
+.persuasive-section .point:hover {
+    transform: translateY(-10px);
+}
+
+.persuasive-section .img-product img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Esconde a imagem alternativa por padrão */
+.img-product .alt-img {
+    display: none;
+}
+
+/* Quando o mouse estiver sobre a .img-product, troca as imagens */
+.img-product:hover .main-img {
+    display: none;
+}
+
+.img-product:hover .alt-img {
+    display: block;
+}
+
+
+.img-product {
+    height: 300px;
+    align-content: center;
+}
+
+.persuasive-section .point:hover .img-product img {
+    transform: scale(1.05);
 }
 
 .persuasive-section .point h3 {
-    font-size: 1.8rem;
-    color: #4239AA; /* Cor de destaque */
+    font-size: 1.4rem;
+    color: #4239AA;
 }
 
 .persuasive-section .point p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: #E0E0E0;
 }
 
-.persuasive-section .point {
-    box-shadow: 0 0 150px 0 #ffffff10;
-}
-
-@media (min-width: 768px) {
+/* Carrossel para Mobile */
+@media (max-width: 768px) {
     .persuasive-section .content {
-        justify-content: space-between;
-        max-width: 30rem;
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
     }
 
     .persuasive-section .point {
-        flex: 1;
-        padding: 1rem 3rem;
-        border-radius: 2rem;
+        min-width: 85%;
+        scroll-snap-align: center;
+    }
+
+    .persuasive-section .point:first-child {
+        margin-left: 10px;
+    }
+
+    .persuasive-section .point:last-child {
+        margin-right: 10px;
     }
 }
 
@@ -270,18 +329,15 @@ header nav ul li a:hover {
 
 .hero .container {
     text-align: center;
-    position: relative;
-    z-index: 2; /* Garante que o texto fique acima do overlay */
     align-content: center;
-    width: 97%;
     border-radius: 1rem;
-    padding: 0;
-    padding-left: 1rem;
+    padding: 1rem;
+    margin: 0 1rem;
 }
 
 .hero .cta {
     display: inline-block;
-    background-color: #FFD700;
+    background-color: #FFC107;
     color: rgb(30, 24, 39);
     padding: 10px 20px;
     font-size: 1rem;
@@ -333,12 +389,13 @@ header nav ul li a:hover {
 .service-item h3 {
     margin-bottom: 10px;
     font-size: 1.5rem;
-    color: #FFC857;
+    color: #3F51B5;
 }
 
 .service-item p {
-    font-size: 1rem;
-    color: #aaa;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #E0E0E0;
 }
 
 
@@ -392,6 +449,7 @@ header nav ul li a:hover {
 
 .contact {
     padding-bottom: 60px;
+    padding: 0 1rem;
 }
 
 .contact h2 {
@@ -427,7 +485,6 @@ form {
     border: 1px solid #cccccc60;
     font-size: 1rem;
     color: #fff;
-    font-weight: 600;
 }
 
 .form-group textarea {
@@ -437,7 +494,7 @@ form {
 
 form .cta {
     display: inline-block;
-    background-color: #FFD700;
+    background-color: #FFC107;
     color: rgb(30, 24, 39);
     padding: 10px 20px;
     font-size: 1rem;
@@ -463,11 +520,16 @@ form .cta:hover {
     border-top: 1px solid #ffffff15;
 }
 
+.iti__divider {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+
 /* Rodapé */
 footer {
     width: 100%;
-    display: flex;
-    justify-content: center;
     color: #fff;
     padding-top: 40px;
     text-align: center;
@@ -493,11 +555,13 @@ footer {
     z-index: -1;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem; 
-    border-top: 1px solid #dddddd50;
 }
 
 .container-footer {
-    width: 100%;
+    width: 99%;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
 }
 
 footer .container {
@@ -584,6 +648,20 @@ footer .footer-legal {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    animation: pulse 1.2s infinite;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .whatsapp-button a img {
@@ -614,58 +692,110 @@ footer .footer-legal {
     padding-left: 20px; /* Espaço para as bolinhas à esquerda */
 }
 
-.menu-ancora li::before {
-    content: '';
-    position: absolute;
-    left: 0; /* Posiciona a bolinha à esquerda do texto */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff25; /* Cor padrão da bolinha (cinza) */
-    border-radius: 50%;
-    z-index: 1;
-    transition: background-color 0.3s ease;
+.menu-ancora li.completed a::before {
+    background-color: #ffffff08; /* Cor alterada para o item completo */
 }
 
-.menu-ancora li.active::before {
-    box-shadow: inset 0 0 1px 0 #999;
-    background-image: linear-gradient(to right, #333,#444,#555,#666,#777,#888,#999)}
+.menu-ancora li.completed a::after {
+    background-color: #ffffff08; /* Cor alterada para a linha do item completo */
+}
+
+.menu-ancora li a::before {
+    content: '';
+    position: absolute;
+    left: 1px; /* Posiciona a bolinha à esquerda do texto */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff15; /* Cor padrão da bolinha (cinza) */
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.2s linear;
+}
+
+.menu-ancora li.active a::before {
+    transform: translateY(-50%) scale(1.3);
+    box-shadow: inset 0 0 1px 0 #555;
+    background-image: linear-gradient(to right, #00000099,#11111199,#22222299,#33333399)}
 
 
-.menu-ancora li::after {
+.menu-ancora li a::after {
     content: '';
     position: absolute;
     left: 4px; /* Posiciona a linha fina abaixo da bolinha */
-    top: 70%; /* Inicia a linha logo abaixo da bolinha */
+    top: 66%; /* Inicia a linha logo abaixo da bolinha */
     width: 2px; /* Espessura da linha */
-    background-color: #ffffff10; /* Cor da linha */
-    height: calc(75%); /* Ajusta a altura para conectar as bolinhas */
+    background-color: #ffffff15; /* Cor da linha */
+    height: 22px; /* Ajusta a altura para conectar as bolinhas */
     z-index: 0;
 }
 
-.menu-ancora li:last-child::after {
+.menu-ancora li:last-child a::after {
     display: none; /* Remove a linha para o último item */
 }
 
 .menu-ancora li a {
-    border: 1px solid #dddddd30;
+    border-left: 1px solid #eaeaea20;
+    border-top: 1px solid #eaeaea20;
+    border-bottom: 1px solid #eaeaea20;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    background-color: #00000050;
+    background-color: #55555599;
     font-weight: 500;
     width: 90px;
     display: flex;
     text-decoration: none;
-    color: #fff; /* Cor do texto */
+    color: #eaeaea99; /* Cor do texto */
     padding-left: 10px; /* Espaçamento entre a bolinha e o texto */
+    transition: color 0.2s linear, background-color 0.2s linear;
 }
 
-.menu-ancora li a:hover {
+.menu-ancora li.active a {
+    background-color: #222;
+    border-left: 1px solid #eaeaea90;
+    border-top: 1px solid #eaeaea90;
+    border-bottom: 1px solid #eaeaea90;
     color: #fff;
 }
 
+
 /* Media Queries */
+
+@media (min-width: 768px) { 
+    .menu-ancora li.completed a::before {
+        background-color: #44444499;
+    }
+    
+    .menu-ancora li.completed a::after {
+        background-color: #44444450;
+    }
+    
+    .menu-ancora li a::before {
+        background-color: #77777799;
+    }
+    
+    .menu-ancora li a::after {
+        background-color: #77777750; /* Cor da linha */
+    }
+     
+    .menu-ancora li a {
+        background-color: #555;
+    }
+    
+    .menu-ancora li.active a {
+        background-color: #333;
+        color: #e0e0e0;
+    }
+
+    .menu-ancora li a:hover {
+        color: #eaeaea;
+        background-color: #555;
+    }
+ } 
+
+ 
+
 @media (max-width: 768px) {
     .service-items {
         display: flex;
@@ -701,7 +831,8 @@ footer .footer-legal {
     }
 
     .dot.active {
-        background-color: #717171;
+        background-color: #ddd;
+transform: scale(1.3);
     }
 
     header .container {
@@ -715,7 +846,7 @@ footer .footer-legal {
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem !important;
     }
 
 
@@ -740,6 +871,10 @@ footer .footer-legal {
     }
 
     .persuasive-section {
+        padding: 60px 20px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
@@ -748,16 +883,14 @@ footer .footer-legal {
     }
 
     header .logo img {
-        width: 140px;
+        width: 150px;
     }
 
-    .hero {
-        height: 60vh;
-    }
 
     .hero .cta {
         padding: 10px 20px;
         font-size: 0.9rem;
+        animation: pulse 2s infinite;
 }
 
 .hero p {
