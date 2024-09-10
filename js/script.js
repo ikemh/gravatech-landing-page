@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const input = document.querySelector("#phone");
 const iti = window.intlTelInput(input, {
   onlyCountries: ["br", "us", "ar", "uy", "py"],
-  initialCountry: "br", // Define o país inicial como Brasil
+  initialCountry: "br",
   preferredCountries: [],
-  separateDialCode: true, // Separa o código de discagem do número
+  separateDialCode: true,
   utilsScript:
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // Para utilidades adicionais, como validação
 });
