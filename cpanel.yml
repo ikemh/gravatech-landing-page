@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home4/masque92/gravatech
+    - echo "Starting Deployment..."
+    - git reset --hard HEAD
+    - git pull origin main
+    - echo "Deployment Complete"
