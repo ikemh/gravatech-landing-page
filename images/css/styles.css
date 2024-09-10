@@ -1,5 +1,7 @@
 /* Reset básico */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
@@ -14,7 +16,7 @@ p,
 a,
 span,
 div {
-  font-family: "Arial", "Helvetica", sans-serif;
+  font-family: "Ubuntu", "Roboto", sans-serif;
 }
 
 * {
@@ -25,11 +27,11 @@ div {
 
 /* Estilos globais */
 body {
+  font-family: "Ubuntu", sans-serif;
   line-height: 1.6;
   color: #fff;
   background-color: #000;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .background-container {
@@ -46,7 +48,7 @@ body {
   height: 100%;
   object-position: center;
   object-fit: cover;
-  filter: brightness(1.4) blur(4px) saturate(1.2);
+  filter: brightness(0.7);
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +93,7 @@ body {
 .blur-mask {
   position: relative;
   z-index: 1;
-  background-color: #00000050;
+  background-color: #00000055;
 }
 
 .blur-mask::before {
@@ -102,10 +104,10 @@ body {
   width: 100%;
   height: 100%;
   background: inherit;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
   z-index: -1;
   border-radius: 10px;
-  border: 1px solid #dddddd50;
+  border: 1px solid #dddddd60;
 }
 
 .small-video {
@@ -277,6 +279,31 @@ header nav ul li a {
   }
 }
 
+.hero-alt {
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  color: #fff;
+  padding: 100px 0;
+  text-align: left;
+  min-height: 500px;
+}
+
+.hero-alt h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  padding-right: 37%;
+}
+
+.hero-alt p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-alt .container {
+  position: relative;
+  z-index: 2;
+}
 /* Seção Hero */
 .hero {
   display: flex;
@@ -290,6 +317,11 @@ header nav ul li a {
   max-height: 40rem;
 }
 
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
@@ -300,8 +332,7 @@ header nav ul li a {
   align-content: center;
   border-radius: 1rem;
   padding: 1rem;
-  margin: 0 20rem;
-  margin-top: 1rem;
+  margin: 0 1rem;
 }
 
 .hero .cta {
@@ -524,7 +555,7 @@ footer {
 }
 
 .container-footer {
-  width: 100%;
+  width: 99%;
   border-radius: 10px;
   display: grid;
   justify-content: center;
@@ -536,7 +567,6 @@ footer .container {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
 }
 
 .about {
@@ -560,7 +590,6 @@ footer .about p {
 #about {
   font-size: 1.1rem !important;
   padding: 1.5rem 0;
-  font-size: 1.2rem !important;
 }
 
 footer .citation {
@@ -760,13 +789,6 @@ footer .footer-legal {
     scroll-snap-align: center;
   }
 
-  h2 {
-    background-color: #15151599;
-    border-radius: 100px;
-    padding: 0.5rem;
-    margin: 0.2rem;
-  }
-
   .carousel-navigation {
     text-align: center;
     margin-top: 20px;
@@ -835,10 +857,6 @@ footer .footer-legal {
 
   header .logo img {
     width: 150px;
-  }
-
-  .hero .container {
-    margin: 0 1rem;
   }
 
   .hero .cta {
