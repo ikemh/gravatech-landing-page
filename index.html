@@ -1,204 +1,493 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gravatech - Lembranças Personalizadas</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>
+      Produtos Exclusivos e Personalizados com Gravação a Laser | Gravatech
+    </title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gravatech",
+        "url": "https://gravatech.com.br",
+        "logo": "https://gravatech.com.br/images/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-54-99973-9097",
+          "contactType": "Customer Service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Doralino Francisco de Souza, 550",
+          "addressLocality": "Santa Maria",
+          "addressRegion": "RS",
+          "postalCode": "97070-320",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
+    <meta
+      name="description"
+      content="Gravatech oferece produtos personalizados e exclusivos com gravação a laser para brindes corporativos. Destaque sua marca com alta precisão e qualidade única."
+    />
 
-</head>
-<body>
+    <!-- SEO Tags -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://gravatech.com.br" />
 
-    <div class="background-container">
-        <img src="./images/fa.png" alt="Background Image" class="background-image">
+    <!-- Favicon SVG para navegadores de desktop -->
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Favicon PNG para navegadores que não suportam SVG e dispositivos móveis -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+
+    <!-- Favicon para PWA (Android e outros) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/android-chrome-512x512.png"
+    />
+    <!-- Preconnect para otimizar o carregamento do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Carregar as fontes de forma não bloqueante -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Produtos Exclusivos e Personalizados com Gravação a Laser | Gravatech"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://gravatech.com.br/images/og-image.png"
+    />
+    <meta property="og:url" content="https://gravatech.com.br" />
+    <meta
+      property="og:description"
+      content="Gravatech oferece produtos personalizados e exclusivos com gravação a laser para brindes corporativos."
+    />
+    <!-- Outras tags e links aqui -->
+  </head>
+  <body>
+    <div
+      class="background-container"
+      style="
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: visible;
+      "
+    >
+      <img
+        src="./images/gravatech-bg.webp?v=2"
+        alt="Imagem de fundo ilustrando a gravação a laser"
+        class="background-image"
+        style="
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+          filter: brightness(1.4) blur(4px) saturate(1.2);
+          position: absolute;
+          top: 0;
+          left: 0;
+        "
+      />
     </div>
-    
+
     <!-- Cabeçalho -->
     <header>
-        <div class="header-container ">
-            <div class="logo">
-                <img id="logo" src="images/g2.svg" alt="Logo Gravatech">
-            </div>
-            <nav>
-                <ul class="menu-ancora">
-                    <li class="active"><a href="#home">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#why-choose-us">Produtos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="#footer">Sobre nós</a></li>
-                </ul>
-                
-            </nav>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            id="logo"
+            src="images/gravatech-logo.svg"
+            alt="Logotipo da Gravatech"
+            width="150"
+            height="auto"
+          />
         </div>
-</header>
+        <nav aria-label="Menu Principal">
+          <ul class="menu-ancora">
+            <li class="active"><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#why-choose-us">Produtos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#footer">Sobre nós</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <!-- Seção Hero -->
-    <section id="home" class="hero">
-        <div class="container blur-mask">
-            <h1>Personalizamos Suas Lembranças com a Precisão do Laser</h1>
-            <p>Brindes corporativos e lembranças exclusivas para todas as ocasiões.</p>
-            <a href="https://wa.me/5554999739097" class="cta">Solicite um Orçamento</a>
-        </div>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container blur-mask">
+        <h1 id="hero-title">
+          Personalizamos Suas Lembranças com a Precisão do Laser
+        </h1>
+        <p>
+          Brindes corporativos e lembranças exclusivas para todas as ocasiões.
+        </p>
+        <a
+          href="https://wa.me/5554999739097"
+          class="cta"
+          aria-label="Clique para solicitar um orçamento pelo WhatsApp"
+          >Solicite um Orçamento</a
+        >
+      </div>
     </section>
 
     <!-- Seção de Serviços -->
-    <section id="servicos" class="services">
-        <h2>Conheça a Gravatech</h2>
-        <div class="container">
-            <div class="service-items">
-                <div class="service-item blur-mask">
-                    <video autoplay loop muted playsinline class="small-video">
-                        <source src="images/video.mp4" type="video/mp4">
-                        Seu navegador não suporta a reprodução de vídeo.
-                    </video>
-                    <h3>Gravação em Copos</h3>
-                    <p>Personalize copos com o logo da sua empresa ou evento.</p>
-                </div>
-                <div class="service-item blur-mask">
-                    <video autoplay loop muted playsinline class="small-video">
-                        <source src="images/video2.mp4" type="video/mp4">
-                        Seu navegador não suporta a reprodução de vídeo.
-                    </video>                    
-                    <h3>Impacto Visual</h3>
-                    <p>Transforme brindes comuns em peças únicas e memoráveis.</p>
-                </div>
-                <div class="service-item blur-mask">
-                    <video autoplay loop muted playsinline class="small-video">
-                        <source src="images/video3.mp4" type="video/mp4">
-                        Seu navegador não suporta a reprodução de vídeo.
-                    </video>        
-                    <h3>Exclusividade</h3>
-                    <p>Destaque sua marca e eleve o branding da sua empresa.</p>
-                </div>
-            </div>
-            <div class="carousel-navigation">
-                <span class="dot" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-            </div>
+    <section id="servicos" class="services" aria-labelledby="services-title">
+      <h2 id="services-title">Conheça a Gravatech</h2>
+      <div class="container">
+        <div class="service-items">
+          <div class="service-item blur-mask">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="small-video"
+              aria-label="Vídeo demonstrando a gravação em copos"
+            >
+              <source src="images/video.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+            <h3>Gravação em Copos</h3>
+            <p>Personalize copos com o logo da sua empresa ou evento.</p>
+          </div>
+          <div class="service-item blur-mask">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="small-video"
+              aria-label="Vídeo ilustrando impacto visual de brindes personalizados"
+            >
+              <source src="images/video2.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+            <h3>Impacto Visual</h3>
+            <p>Transforme brindes comuns em peças únicas e memoráveis.</p>
+          </div>
+          <div class="service-item blur-mask">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="small-video"
+              aria-label="Vídeo mostrando produtos exclusivos personalizados"
+            >
+              <source src="images/video3.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+            <h3>Exclusividade</h3>
+            <p>Destaque sua marca e eleve o branding da sua empresa.</p>
+          </div>
         </div>
+        <div
+        class="carousel-navigation"
+        aria-label="Navegação do carrossel de serviços"
+      >
+        <button class="dot" data-index="0" aria-label="Ir para o item 1"></button>
+        <button class="dot" data-index="1" aria-label="Ir para o item 2"></button>
+        <button class="dot" data-index="2" aria-label="Ir para o item 3"></button>
+      </div>
     </section>
-    
 
-    <section id="why-choose-us" class="persuasive-section">
-        <h2>Nossos produtos</h2>
-        <div class="container">
-            <div class="content">
-                <div class="point blur-mask">
-                    <div class="img-product">
-                        <img src="images/produto-copo.png" class="main-img">
-                        <img src="images/produto-copo-alt.png" alt="Cuia alternativo" class="alt-img">
-
-                    </div>
-                    <h3>Fortaleça Sua Marca</h3>
-                    <p>Produtos personalizados que reforçam sua identidade com qualidade e impacto.</p>
-                </div>
-                <div class="point blur-mask">
-                    <div class="img-product">
-                        <img src="images/produto-cuia.png" class="main-img">
-                        <img src="images/produto-cuia-alt.png" alt="Cuia alternativo" class="alt-img">
-                    </div>                 
-                    <h3>Qualidade que Impacta</h3>
-                    <p>Gravações a laser de alta precisão e durabilidade para elevar sua marca.</p>
-                </div>
-                <div class="point blur-mask">
-                    <div class="img-product">
-                        <img src="images/produto-xicara.png" class="main-img">
-                        <img src="images/produto-xicara-alt.png" alt="Cuia alternativo" class="alt-img">
-
-                    </div>
-                    <h3>Soluções Versáteis</h3>
-                    <p>Produtos ideais para eventos e promoções, oferecendo sofisticação e valor.</p>
-                </div>
-                <div class="point blur-mask">
-                    <div class="img-product">
-                        <img src="images/produto-abridor.png" class="main-img">
-                        <img src="images/produto-abridor-alt.png" alt="Cuia alternativo" class="alt-img">
-
-                    </div>
-                    <h3>Inovação que Transforma</h3>
-                    <p>Soluções criativas que transformam objetos comuns em peças marcantes.</p>
-                </div>
+    <!-- Seção de Produtos -->
+    <section
+      id="why-choose-us"
+      class="persuasive-section"
+      aria-labelledby="products-title"
+    >
+      <h2 id="products-title">Nossos produtos</h2>
+      <div class="container">
+        <div class="content">
+          <div class="point blur-mask">
+            <div class="img-product">
+              <img
+                src="images/produto-copo.webp?v=2"
+                class="main-img"
+                alt="Copo personalizado com logo"
+              />
+              <img
+                src="images/produto-copo-alt.webp?v=2"
+                alt="Variante de copo personalizado"
+                class="alt-img"
+              />
             </div>
+            <h3>Fortaleça Sua Marca</h3>
+            <p>
+              Produtos personalizados que reforçam sua identidade com qualidade
+              e impacto.
+            </p>
+          </div>
+          <div class="point blur-mask">
+            <div class="img-product">
+              <img
+                src="images/produto-cuia.webp?v=2"
+                class="main-img"
+                alt="Cuia personalizada com logo"
+              />
+              <img
+                src="images/produto-cuia-alt.webp?v=2"
+                alt="Variante de cuia personalizada"
+                class="alt-img"
+              />
+            </div>
+            <h3>Qualidade que Impacta</h3>
+            <p>
+              Gravações a laser de alta precisão e durabilidade para elevar sua
+              marca.
+            </p>
+          </div>
+          <div class="point blur-mask">
+            <div class="img-product">
+              <img
+                src="images/produto-xicara.webp?v=2"
+                class="main-img"
+                alt="Xícara personalizada com logo"
+              />
+              <img
+                src="images/produto-xicara-alt.webp?v=2"
+                alt="Variante de xícara personalizada"
+                class="alt-img"
+              />
+            </div>
+            <h3>Soluções Versáteis</h3>
+            <p>
+              Produtos ideais para eventos e promoções, oferecendo sofisticação
+              e valor.
+            </p>
+          </div>
+          <div class="point blur-mask">
+            <div class="img-product">
+              <img
+                src="images/produto-abridor.webp?v=2"
+                class="main-img"
+                alt="Abridor de garrafa personalizado com logo"
+              />
+              <img
+                src="images/produto-abridor-alt.webp?v=2"
+                alt="Variante de abridor personalizado"
+                class="alt-img"
+              />
+            </div>
+            <h3>Inovação que Transforma</h3>
+            <p>
+              Soluções criativas que transformam objetos comuns em peças
+              marcantes.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    
-    
 
     <!-- Seção de Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form class="blur-mask" action="https://docs.google.com/forms/d/YOUR_FORM_ID/formResponse" method="get" target="_blank">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="entry.XXXXXX" placeholder="Seu nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="empresa">Empresa <small>(opcional)</small></label>
-                    <input type="text" id="empresa" name="entry.YYYYYY" placeholder="Nome da empresa">
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="entry.ZZZZZZ" placeholder="email@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefone</label>
-                    <div class="phone-group">
-                        <input id="phone" type="tel" name="entry.AAAAAA" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="entry.BBBBBB" required></textarea>
-                </div>
-                <button type="submit" class="cta">Enviar Mensagem</button>
-            </form>
-        </div>
+    <section id="contato" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Entre em Contato</h2>
+        <form
+          class="blur-mask"
+          action="https://docs.google.com/forms/d/1aUiOWeSFPIfn4Ny_M-6DicR2kbyfil7pSmnsDksHT5g/formResponse"
+          method="post"
+          target="_blank"
+        >
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="entry.1905260964"
+              placeholder="Seu nome"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa <small>(opcional)</small></label>
+            <input
+              type="text"
+              id="empresa"
+              name="entry.85454255"
+              placeholder="Nome da empresa"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="entry.1684156648"
+              placeholder="email@email.com"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input
+              id="phone"
+              type="tel"
+              name="entry.1666856684"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea
+              id="message"
+              name="entry.1317775244"
+              placeholder="Escreva sua mensagem aqui"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+          <button type="submit" class="cta" aria-label="Enviar mensagem">
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
     </section>
+
+    <!-- Botão do WhatsApp -->
     <div class="whatsapp-button">
-        <a href="https://wa.me/5554999739097" target="_blank">
-            <img src="images/whatsapp.png" alt="WhatsApp">
-        </a>
+      <a
+        href="https://wa.me/5554999739097"
+        target="_blank"
+        aria-label="Clique para entrar em contato via WhatsApp"
+      >
+        <img
+          src="images/whatsapp-btn.webp?v=2"
+          alt="Ícone do WhatsApp"
+          width="60"
+          height="auto"
+        />
+      </a>
     </div>
 
     <!-- Rodapé -->
     <footer>
-        <section id="footer">
-            <div class="container-footer blur-mask">
-                <div class="container">
-                <div class="about">
-                    <p id="about">Nós da Gravatech, oferecemos soluções de gravação a laser de alta precisão para destacar a sua marca. Nossos produtos são projetados para agregar valor e durabilidade em brindes corporativos, eventos e campanhas promocionais. <br> <br>Com tecnologia avançada e foco em resultados, garantimos entregas que atendem às necessidades do seu negócio com eficiência e qualidade.</p>
-                    <p class="citation">"Com precisão e qualidade em cada detalhe."<br><em>— Giovani de Bortoli, CEO</em></p>
-                </div>
-                
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.019953965213!2d-53.80519332502476!3d-29.689526224778234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fb50282b1640b9%3A0xb6b9e68ed7b473de!2sR.%20Doralino%20Francisco%20de%20Souza%2C%20550%20-%20Url%C3%A2ndia%2C%20Santa%20Maria%20-%20RS%2C%20970.070-320!5e0!3m2!1sen!2sbr!4v1692818299560!5m2!1sen!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+      <section id="footer" aria-labelledby="footer-title">
+        <div class="container-footer blur-mask">
+          <div class="container">
+            <div class="about">
+              <p id="about">
+                A Gravatech oferece soluções de gravação a laser de alta
+                precisão para destacar a sua marca com destaque na flexibilidade
+                e entrega.
+              </p>
+              <p class="citation">
+                "Com precisão e qualidade em cada detalhe." <br /><em
+                  >— Giovani de Bortoli, CEO</em
+                >
+              </p>
+            </div>
 
-                <div class="contact-info">
-                    <p>Rua Doralino Francisco de Souza, 550 - Urlandia, Santa Maria - RS, 97.070-320</p>
-                    <p><strong>CNPJ:</strong> 40.917.923/0001-27</p>
-                </div>
-    
-                <div class="social">
-                    <ul class="social-links">
-                        <li><a href="https://www.facebook.com" class="social-icon facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://www.instagram.com" class="social-icon instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com" class="social-icon linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
+            <div class="map" aria-label="Mapa da localização da Gravatech">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.019953965213!2d-53.80519332502476!3d-29.689526224778234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fb50282b1640b9%3A0xb6b9e68ed7b473de!2sR.%20Doralino%20Francisco%20de%20Souza%2C%20550%20-%20Url%C3%A2ndia%2C%20Santa%20Maria%20-%20RS%2C%20970.070-320!5e0!3m2!1sen!2sbr!4v1692818299560!5m2!1sen!2sbr"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
-                <div class="footer-legal">
-                    <p>&copy; 2024 Gravatech. Todos os direitos reservados.</p>
-                </div>
+
+            <div class="contact-info">
+              <p>
+                Rua Doralino Francisco de Souza, 550 - Urlandia, Santa Maria -
+                RS, 97.070-320
+              </p>
+              <p><strong>CNPJ:</strong> 40.917.923/0001-27</p>
             </div>
-        </section>
+
+            <div class="social">
+              <ul class="social-links" aria-label="Redes sociais da Gravatech">
+                <li>
+                  <a
+                    href="https://www.facebook.com/"
+                    class="social-icon facebook"
+                    title="Facebook"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    class="social-icon instagram"
+                    title="Instagram"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                </li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-legal">
+            <p>&copy; 2024 Gravatech. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </section>
     </footer>
-    
-    <script src="js/script.js"></script>
-</body>
+
+    <script src="js/script.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+      async
+    ></script>
+  </body>
 </html>
