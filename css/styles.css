@@ -291,8 +291,12 @@ header nav ul li a {
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
 }
 
 .hero .container {
@@ -300,8 +304,8 @@ header nav ul li a {
   align-content: center;
   border-radius: 1rem;
   padding: 1rem;
-  margin: 0 20rem;
   margin-top: 1rem;
+  margin: 1rem;
 }
 
 .hero .cta {
@@ -547,9 +551,16 @@ footer .container {
 footer .about,
 .contact-info,
 .map,
-.social,
-.footer-legal {
+.social {
   margin-bottom: 10px;
+}
+
+.social img {
+  filter: saturate(0.85);
+}
+
+.social img:hover {
+  scale: 1.05;
 }
 
 #footer-title {
