@@ -526,7 +526,8 @@ footer {
 .container-footer {
   width: 100%;
   border-radius: 10px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -540,7 +541,7 @@ footer .container {
 }
 
 .about {
-  padding: 3rem 15rem;
+  padding: 1rem 15rem;
 }
 
 footer .about,
@@ -549,6 +550,10 @@ footer .about,
 .social,
 .footer-legal {
   margin-bottom: 10px;
+}
+
+#footer-title {
+  padding-top: 2rem;
 }
 
 footer .about p {
@@ -573,15 +578,6 @@ footer .citation {
 footer .contact-info {
   font-weight: bold;
   line-height: 1.8;
-}
-
-footer .map iframe {
-  border-radius: 8px;
-}
-
-.map {
-  width: 50%;
-  align-self: center;
 }
 
 footer .social-links {
@@ -740,6 +736,10 @@ footer .footer-legal {
   color: #eaeaea;
 }
 
+.carousel-navigation {
+  display: none;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .service-items {
@@ -770,6 +770,7 @@ footer .footer-legal {
   .carousel-navigation {
     text-align: center;
     margin-top: 20px;
+    display: inherit;
   }
 
   .dot {
@@ -780,6 +781,7 @@ footer .footer-legal {
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+    border: none;
   }
 
   .dot.active {
@@ -812,7 +814,8 @@ footer .footer-legal {
     font-size: 1.1rem;
     padding: 1.5qrem 0;
   }
-  .map {
+
+  footer .map-container iframe {
     width: 100%;
   }
 
