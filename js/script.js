@@ -162,21 +162,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const contentContainer = document.querySelector(".persuasive-section .content");
-
-// Função que move o container dos cards com base na posição do mouse
 function handleMouseMove(event) {
-  // Verifica se a tela é maior que 768px (exemplo para desktop)
   if (window.innerWidth > 768) {
-    const { clientX } = event; // Pega a posição X do mouse
-    const containerWidth = contentContainer.offsetWidth; // Largura do container visível
-    const scrollWidth = contentContainer.scrollWidth; // Largura total do conteúdo (incluindo os itens ocultos)
-    const maxScrollLeft = scrollWidth - containerWidth; // Quanto o conteúdo pode rolar para a esquerda
+    const { clientX } = event;
+    const contentContainer = document.querySelector(".content"); // Certifique-se de selecionar o container correto
+    const containerWidth = contentContainer.offsetWidth;
+    const scrollWidth = contentContainer.scrollWidth;
+    const maxScroll = scrollWidth - containerWidth;
 
-    // Calcula a porcentagem de deslocamento com base na posição do mouse
-    const percentage = clientX / containerWidth;
+    // Calcula a posição do mouse em relação ao centro do container
+    const centerX = containerWidth / 2;
+    const deltaX = clientX - centerX;
 
-    // Ajusta o deslocamento para mover o conteúdo suavemente
-    const scrollAmount = maxScrollLeft * percentage;
+    // Calcula a porcentagem de deslocamento (-1 a 1)
+    const percentage = deltaX / centerX;
+
+    // Calcula o scrollAmount de forma simétrica
+    let scrollAmount = (maxScroll / 2) * percentage + maxScroll / 2;
+
+    // Limita o scrollAmount entre 0 e maxScroll
+    scrollAmount = Math.max(0, Math.min(maxScroll, scrollAmount));
 
     // Aplica a transformação para deslocar os itens suavemente
     contentContainer.style.transform = `translateX(${-scrollAmount}px)`;

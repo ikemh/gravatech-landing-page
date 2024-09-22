@@ -195,6 +195,7 @@ header nav ul li a {
   gap: 30px;
   padding-top: 0.6rem !important;
   justify-content: space-between;
+  transition: transform 0.2s ease;
 }
 
 .persuasive-section .point {
@@ -732,9 +733,18 @@ footer .footer-legal {
   transition: color 0.2s linear, background-color 0.2s linear;
 }
 
+.menu-ancora li a:hover {
+  border-color: #eaeaea99;
+  color: #eaeaea;
+}
+
 .menu-ancora li.completed a {
   background-color: #55555520;
   color: #eaeaea20;
+}
+
+.menu-ancora li.completed a:hover {
+  color: #eaeaea90;
 }
 
 .menu-ancora li.active a {
@@ -831,6 +841,14 @@ footer .footer-legal {
   .persuasive-section .point {
     padding: 1rem;
     border-radius: 2rem;
+  }
+
+  .hero {
+    margin: 0;
+  }
+
+  .contact {
+    padding: 0;
   }
 
   .persuasive-section {
