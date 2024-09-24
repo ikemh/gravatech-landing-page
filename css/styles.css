@@ -562,6 +562,7 @@ footer .about,
 
 #footer-title {
   padding-top: 2rem;
+  font-size: 2rem;
 }
 
 footer .about p {
@@ -623,7 +624,7 @@ footer .footer-legal {
 .whatsapp-button {
   position: fixed;
   bottom: 1vh;
-  right: 5vh;
+  right: 2vh;
   z-index: 1000;
   animation: pulse 1.2s infinite;
 }
@@ -767,6 +768,7 @@ footer .footer-legal {
     scroll-behavior: smooth;
     gap: 20px;
     scroll-snap-type: x mandatory;
+    padding: 2rem;
   }
 
   .service-item {
@@ -843,6 +845,10 @@ footer .footer-legal {
     border-radius: 2rem;
   }
 
+  header .logo img {
+    width: 20vh;
+  }
+
   .hero {
     margin: 0;
   }
@@ -871,6 +877,10 @@ footer .footer-legal {
     padding: 10px 20px;
     font-size: 0.9rem;
     animation: pulse 2s infinite;
+  }
+
+  .contact {
+    padding: 2rem;
   }
 
   .hero p {
