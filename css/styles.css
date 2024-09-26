@@ -32,6 +32,22 @@ body {
   overflow-y: auto;
 }
 
+h2 {
+  filter: drop-shadow(2px 4px 3px #22222290);
+  padding-bottom: 1.5rem;
+}
+
+.service-items h3,
+.persuasive-section h3 {
+  filter: drop-shadow(2px 4px 3px #22222290);
+  margin-top: 0.5rem;
+  color: #2962ff;
+}
+
+.typewriter {
+  visibility: hidden; /* Esconde o título até o efeito começar */
+}
+
 .background-container {
   position: fixed;
   width: 100%;
@@ -42,14 +58,6 @@ body {
 }
 
 .background-image {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: cover;
-  filter: brightness(1.4) blur(4px) saturate(1.2);
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transição elástica suave */
 }
 
@@ -91,7 +99,7 @@ body {
 .blur-mask {
   position: relative;
   z-index: 1;
-  background-color: #00000050;
+  background-color: #00000035;
 }
 
 .blur-mask::before {
@@ -102,10 +110,10 @@ body {
   width: 100%;
   height: 100%;
   background: inherit;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(50px);
   z-index: -1;
   border-radius: 10px;
-  border: 1px solid #dddddd50;
+  border: 1px solid #dddddd30;
 }
 
 .small-video {
@@ -113,6 +121,7 @@ body {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
+  filter: drop-shadow(0px 10px 5px #00000030);
 }
 /* Cabeçalho */
 header {
@@ -122,17 +131,16 @@ header {
   top: 0;
   color: #fff;
   z-index: 1000;
-  transition: background-color 2s ease, backdrop-filter 2s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 1s linear, backdrop-filter 1s ease !important;
   padding: 1vh 0;
-  border-bottom-left-radius: 1.5vh;
-  border-bottom-right-radius: 1.5vh;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
 }
 
 header.sticky-active {
-  background-color: #ffffff05;
   backdrop-filter: blur(5px);
-  border-bottom: 0.2vh solid #dddddd15;
+  border-bottom: 0.2vh solid #dddddd10;
+  background-color: #60606010;
 }
 
 .header-container {
@@ -150,9 +158,14 @@ header .logo {
 
 header .logo img {
   width: 28vh;
+  filter: drop-shadow(2px 4px 3px #000000);
   margin-left: 3vh;
   position: relative;
   z-index: 1;
+  background: #ffffff10;
+  padding: 0.5rem;
+  border: 1px solid #ffffff15;
+  border-radius: 1rem;
 }
 
 header nav ul {
@@ -172,7 +185,7 @@ header nav ul li a {
 }
 
 .persuasive-section {
-  padding: 60px 10rem !important;
+  padding: 60px 2rem !important;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -182,7 +195,6 @@ header nav ul li a {
 .persuasive-section h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 .persuasive-section .container {
@@ -193,7 +205,6 @@ header nav ul li a {
 .persuasive-section .content {
   display: flex;
   gap: 30px;
-  padding-top: 0.6rem !important;
   justify-content: space-between;
   transition: transform 0.2s ease;
 }
@@ -216,6 +227,7 @@ header nav ul li a {
   object-fit: cover;
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
+  filter: drop-shadow(0px 10px 5px #00000050);
 }
 
 .img-product .alt-img {
@@ -231,6 +243,7 @@ header nav ul li a {
 }
 
 .img-product {
+  filter: brightness(1.3) saturate(1.15);
   height: 300px;
   align-content: center;
 }
@@ -241,7 +254,6 @@ header nav ul li a {
 
 .persuasive-section .point h3 {
   font-size: 1.4rem;
-  color: #4239aa;
 }
 
 .persuasive-section .point p {
@@ -259,6 +271,7 @@ header nav ul li a {
     gap: 20px;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 20px;
+    padding-top: 1rem;
   }
 
   .persuasive-section .point {
@@ -282,13 +295,13 @@ header nav ul li a {
   background-size: cover;
   background-position: right;
   color: #fff;
-  padding: 2rem 0;
+  padding-top: 2rem;
   margin: 0 4rem;
 }
 
 .hero p {
   font-size: 1.35rem;
-  margin-bottom: 20px;
+  margin: 1.5rem 0;
 }
 
 .hero h1 {
@@ -299,9 +312,8 @@ header nav ul li a {
   text-align: center;
   align-content: center;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2.5rem 1rem;
   margin: 1rem;
-  min-height: 25rem;
 }
 
 .hero .cta {
@@ -314,12 +326,13 @@ header nav ul li a {
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: font-size 0.3s ease, transform 0.3s ease;
+  animation: pulse 2s infinite;
+  filter: drop-shadow(3px 3px 6px #22222290);
 }
 
 .hero .cta:hover {
-  background-color: #ffc107;
-  transform: scale(1.1);
+  filter: brightness(1.05);
 }
 
 /* Seção de Serviços */
@@ -334,14 +347,13 @@ header nav ul li a {
 .services h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 .service-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .service-item {
@@ -358,11 +370,10 @@ header nav ul li a {
 .service-item h3 {
   margin-bottom: 10px;
   font-size: 1.5rem;
-  color: #3f51b5;
 }
 
 .service-item p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #e0e0e0;
 }
@@ -375,7 +386,6 @@ header nav ul li a {
 .portfolio h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 .portfolio-items {
@@ -423,15 +433,18 @@ header nav ul li a {
 .contact h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
+  transition: height 0.5s ease-in-out;
 }
 
 .form-group {
@@ -473,10 +486,18 @@ form .cta {
   transition: background-color 0.3s ease;
   border: 0;
   width: 100%;
+  cursor: pointer;
 }
 
 form .cta:hover {
-  background-color: #e6b800;
+  filter: brightness(1.1);
+}
+
+#success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10rem;
 }
 
 .iti__country.iti__highlight {
@@ -552,12 +573,13 @@ footer .about,
   margin-bottom: 10px;
 }
 
-.social img {
-  filter: saturate(0.85);
-}
-
 .social img:hover {
   scale: 1.05;
+}
+
+.social img {
+  width: 30px;
+  filter: saturate(2);
 }
 
 #footer-title {
@@ -626,7 +648,14 @@ footer .footer-legal {
   bottom: 1vh;
   right: 2vh;
   z-index: 1000;
+  filter: drop-shadow(3px 3px 6px #222);
   animation: pulse 1.2s infinite;
+  opacity: 0; /* Inicialmente escondido */
+  transition: opacity 1s ease-in-out; /* Transição suave */
+}
+
+.whatsapp-button.visible {
+  opacity: 1; /* Mostra o botão quando a classe 'visible' é adicionada */
 }
 
 @keyframes pulse {
@@ -718,12 +747,12 @@ footer .footer-legal {
 }
 
 .menu-ancora li a {
-  border-left: 0.2vh solid #eaeaea40;
-  border-top: 0.2vh solid #eaeaea40;
-  border-bottom: 0.2vh solid #eaeaea40;
+  border-left: 0.2vh solid #eaeaea20;
+  border-top: 0.2vh solid #eaeaea20;
+  border-bottom: 0.2vh solid #eaeaea20;
   border-top-left-radius: 1vh;
   border-bottom-left-radius: 1vh;
-  background-color: #55555599;
+  background-color: #55555580;
   font-weight: 600;
   width: 14vh;
   display: flex;
@@ -731,29 +760,19 @@ footer .footer-legal {
   text-decoration: none;
   color: #eaeaea99;
   padding-left: 2vh;
-  transition: color 0.2s linear, background-color 0.2s linear;
-}
-
-.menu-ancora li a:hover {
-  border-color: #eaeaea99;
-  color: #eaeaea;
 }
 
 .menu-ancora li.completed a {
   background-color: #55555520;
-  color: #eaeaea20;
-}
-
-.menu-ancora li.completed a:hover {
-  color: #eaeaea90;
+  color: #eaeaea60;
 }
 
 .menu-ancora li.active a {
-  background-color: #222;
-  border-left: 0.3vh solid #eaeaea70;
-  border-top: 0.3vh solid #eaeaea70;
-  border-bottom: 0.4vh solid #eaeaea70;
-  color: #eaeaea;
+  background-image: linear-gradient(to top, #444, #222, #000);
+  border-left: 0.2vh solid #ddd;
+  border-top: 0.2vh solid #ddd;
+  border-bottom: 0.3vh solid #ddd;
+  color: #fff;
 }
 
 .carousel-navigation {
@@ -768,7 +787,7 @@ footer .footer-legal {
     scroll-behavior: smooth;
     gap: 20px;
     scroll-snap-type: x mandatory;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 
   .service-item {
@@ -782,10 +801,8 @@ footer .footer-legal {
   }
 
   h2 {
-    background-color: #15151599;
     border-radius: 100px;
     padding: 0.5rem;
-    margin: 0.2rem;
   }
 
   .carousel-navigation {
@@ -795,8 +812,8 @@ footer .footer-legal {
   }
 
   .dot {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;
@@ -806,8 +823,8 @@ footer .footer-legal {
   }
 
   .dot.active {
-    background-color: #ddd;
-    transform: scale(1.3);
+    background-color: #eaeaea;
+    transform: scale(1.1);
   }
 
   header .container {
@@ -838,6 +855,7 @@ footer .footer-legal {
 
   footer .map-container iframe {
     width: 100%;
+    border-radius: 0.5rem !important;
   }
 
   .persuasive-section .point {
@@ -857,8 +875,11 @@ footer .footer-legal {
     padding: 0;
   }
 
+  #why-choose-us {
+    padding: 0 !important;
+  }
+
   .persuasive-section {
-    padding: 60px 0 !important;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -876,11 +897,10 @@ footer .footer-legal {
   .hero .cta {
     padding: 10px 20px;
     font-size: 0.9rem;
-    animation: pulse 2s infinite;
   }
 
   .contact {
-    padding: 2rem;
+    padding: 0.8rem;
   }
 
   .hero p {
@@ -890,8 +910,19 @@ footer .footer-legal {
   .hero h1 {
     font-size: 1.8rem;
   }
+}
 
-  .service-item p {
-    font-size: 1.1rem;
+@media (min-width: 768px) {
+  .menu-ancora li a:hover {
+    border-color: #eaeaea99;
+    color: #eaeaea;
+  }
+
+  .menu-ancora li.completed a:hover {
+    color: #eaeaea90;
+  }
+
+  .hero .container {
+    min-height: 25rem;
   }
 }
