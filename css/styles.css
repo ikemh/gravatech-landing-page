@@ -158,14 +158,10 @@ header .logo {
 
 header .logo img {
   width: 28vh;
-  filter: drop-shadow(2px 4px 3px #000000);
+  filter: drop-shadow(2px 4px 2px #000000);
   margin-left: 3vh;
   position: relative;
   z-index: 1;
-  background: #ffffff10;
-  padding: 0.5rem;
-  border: 1px solid #ffffff15;
-  border-radius: 1rem;
 }
 
 header nav ul {
