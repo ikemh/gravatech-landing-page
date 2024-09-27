@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Define a cor do destaque com base na classe
           let backgroundColor = "#ffc10780"; // Cor padrão para 'highlight'
           if (highlight.classList.contains("highlight-blue")) {
-            backgroundColor = "#2962ff80"; // Cor para 'highlight-blue'
+            backgroundColor = "#ffc10780"; // Cor para 'highlight-blue'
           }
 
           // Define a posição do highlight
@@ -386,57 +386,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Observa cada highlight e highlight-blue
   highlights.forEach((highlight) => {
     observer.observe(highlight);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const h2Elements = document.querySelectorAll(".typewriter");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const h2 = entry.target;
-          const fullText = h2.getAttribute("data-full-text") || h2.textContent; // Salva o texto original, caso já tenha sido alterado.
-          let index = 0;
-
-          // Calcula a altura antes de limpar o texto
-          const originalHeight = h2.offsetHeight;
-          h2.style.height = `${originalHeight}px`; // Define a altura inicial
-          h2.style.overflow = "hidden"; // Evita que o conteúdo se expanda fora do container
-          h2.textContent = ""; // Limpa o texto para o efeito de digitação
-          h2.style.visibility = "visible"; // Faz o texto ser visível apenas no início da digitação
-
-          // Função de digitação
-          function typeWriter() {
-            if (index < fullText.length) {
-              h2.textContent += fullText.charAt(index);
-              index++;
-              setTimeout(typeWriter, 100); // Controla a velocidade da digitação (100ms)
-            } else {
-              // Após completar o efeito, removemos a altura fixa
-              h2.style.height = "auto";
-              h2.style.overflow = "visible";
-            }
-          }
-
-          setTimeout(typeWriter, 100); // Pequeno delay antes de iniciar a "digitação"
-
-          // Desativa o observador após o primeiro disparo
-          observer.unobserve(h2);
-        }
-      });
-    },
-    {
-      threshold: 1,
-    }
-  );
-
-  // Observa cada h2 com a classe 'typewriter'
-  h2Elements.forEach((h2) => {
-    // Salva o texto original em um atributo data-full-text para garantir que o texto não seja perdido
-    h2.setAttribute("data-full-text", h2.textContent);
-    h2.style.visibility = "hidden"; // Inicialmente invisível até que o efeito de digitação comece
-    observer.observe(h2);
   });
 });
