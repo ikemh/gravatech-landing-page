@@ -308,7 +308,7 @@ header nav ul li a {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: font-size 0.3s ease, transform 0.3s ease;
   animation: pulse 2s infinite;
   filter: drop-shadow(3px 3px 6px #22222250);
@@ -467,7 +467,7 @@ form .cta {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s ease;
   border: 0;
   width: 100%;
