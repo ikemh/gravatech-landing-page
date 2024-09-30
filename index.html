@@ -308,7 +308,6 @@
         opacity: 0.6; /* Ajuste para harmonizar com o background animado */
       }
     </style>
-
     <header>
       <div class="header-container">
         <div class="logo">
@@ -343,7 +342,8 @@
           <span class="highlight">Impressionam</span> Clientes e Parceiros
         </p>
         <a
-          href="https://wa.me/5554992297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
+          href="https://wa.me/555592297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
+          target="_blank"
           class="cta"
           aria-label="Clique para solicitar um orçamento pelo WhatsApp"
         >
@@ -356,14 +356,13 @@
     <section id="servicos" class="services" aria-labelledby="services-title">
       <h2 class="laser-title">Conheça a Gravatech</h2>
       <canvas id="laser-canvas"></canvas>
-
       <script>
-        let canvas, ctx, w, h, laser, particles;
+        let canvas, ctx, laser, particles;
 
         // Função para o efeito de Laser
         function Laser(options) {
           options = options || {};
-          this.lifespan = 3;
+          this.lifespan = 4;
           this.maxlife = this.lifespan;
           this.color = options.color || "#fd2423";
           this.x = options.x || 0;
@@ -382,7 +381,7 @@
             ctx.strokeStyle = this.color;
             ctx.lineWidth = this.width;
             ctx.moveTo(this.x, this.y);
-            ctx.lineTo(this.x + 100, this.y + 0); // Ajusta o comprimento do laser
+            ctx.lineTo(this.x + 2000, this.y); // Ajusta o comprimento do laser
             ctx.stroke();
             ctx.closePath();
           };
@@ -395,16 +394,15 @@
         // Função para criar as faíscas (Spark)
         function Spark(options) {
           options = options || {};
-          this.x = options.x || w * 0;
-          this.y = options.y || h * 0;
+          this.x = options.x || 0;
+          this.y = options.y || 0;
           this.v = options.v || {
-            direct: Math.random() * Math.PI * 5,
+            direct: Math.random() * Math.PI * 1,
             weight: Math.random() * 5 + 3,
             friction: 0.94,
           };
-          this.width = options.width || Math.random() * 3;
-          this.lifespan =
-            options.lifespan || Math.round(Math.random() * 10 + 10);
+          this.width = options.width || Math.random() * 4;
+          this.lifespan = options.lifespan || Math.round(Math.random() * 5 + 8);
           this.maxlife = this.lifespan;
           this.color = options.color || "#fdab23";
           this.prev = { x: this.x, y: this.y };
@@ -438,7 +436,7 @@
         // Função para gerenciar as partículas
         function Particles(options) {
           options = options || {};
-          this.sparks = [...new Array(20)].map(() => new Spark(options));
+          this.sparks = [...new Array(30)].map(() => new Spark(options));
 
           this.update = function () {
             this.sparks.forEach((s, i) => s.update(i, this.sparks));
@@ -458,6 +456,12 @@
 
         // Função de atualização
         function update() {
+          // Recalcular o tamanho da janela em cada atualização
+          w = window.innerWidth;
+          h = window.innerHeight;
+          canvas.width = w;
+          canvas.height = h;
+
           laser.forEach((l, i) => l.update(i, laser));
           particles.forEach((p) => p.update());
         }
@@ -492,7 +496,6 @@
           }
         }
 
-        // Função de observador para ativar o efeito quando o <h2> aparecer na tela
         function observeHeadings() {
           const observer = new IntersectionObserver(
             (entries, observer) => {
@@ -508,7 +511,7 @@
               });
             },
             {
-              threshold: 0, // Ativa o efeito quando 50% do <h2> aparecer na tela
+              threshold: 1, // Ativa o efeito quando 100% do h2 estiver visível
             }
           );
 
@@ -522,10 +525,6 @@
           // Configura o canvas para cobrir a tela inteira
           canvas = document.getElementById("laser-canvas");
           ctx = canvas.getContext("2d");
-          w = window.innerWidth;
-          h = window.innerHeight;
-          canvas.width = w;
-          canvas.height = h;
 
           laser = [];
           particles = [];
@@ -755,7 +754,6 @@
     <!-- Seção de Contato -->
     <section id="contato" class="contact" aria-labelledby="contact-title">
       <h2 class="laser-title">Entre em Contato</h2>
-
       <div class="container">
         <form
           class="blur-mask"
@@ -823,7 +821,7 @@
     <!-- Botão do WhatsApp -->
     <div class="whatsapp-button">
       <a
-        href="https://wa.me/5554992297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
+        href="https://wa.me/555592297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
         target="_blank"
         aria-label="Clique para entrar em contato via WhatsApp"
       >
@@ -876,7 +874,7 @@
               <ul class="social-links" aria-label="Redes sociais da Gravatech">
                 <li>
                   <a
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/profile.php?id=61566314021750"
                     class="social-icon facebook"
                     title="Facebook"
                   >
@@ -889,7 +887,7 @@
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/gravatechbrindes/"
                     class="social-icon instagram"
                     title="Instagram"
                   >
