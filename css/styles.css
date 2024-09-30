@@ -20,8 +20,8 @@ body {
 }
 
 h2 {
-  filter: drop-shadow(3px 5px 1px #22222250);
-  padding-bottom: 1.5rem;
+  filter: drop-shadow(3px 5px 1px #22222230);
+  padding: 0 !important;
 }
 
 .service-items h3,
@@ -73,7 +73,7 @@ h2 {
 .blur-mask {
   position: relative;
   z-index: 1;
-  background-color: #ffffff10;
+  background-image: linear-gradient(0deg, #00000010, #ffffff10);
 }
 
 .blur-mask::before {
@@ -104,16 +104,14 @@ header {
   top: 0;
   color: #fff;
   z-index: 1000;
-  transition: background-color 1s linear, backdrop-filter 1s ease !important;
-  padding: 1vh 0;
-  border-bottom-left-radius: 1vh;
-  border-bottom-right-radius: 1vh;
+  transition: transform 1s ease, background-color 1s linear,
+    backdrop-filter 1s ease, box-shadow 1s ease !important;
 }
 
 header.sticky-active {
   backdrop-filter: blur(10px);
-  border-bottom: 0.2vh solid #dddddd20;
   background-color: #00000010;
+  box-shadow: 0 4px 4px 0 #00000015;
 }
 
 .header-container {
@@ -240,8 +238,7 @@ header nav ul li a {
     scroll-snap-type: x mandatory;
     gap: 20px;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 20px;
-    padding-top: 1rem;
+    padding: 1rem 0;
   }
 
   .persuasive-section .point {
@@ -276,7 +273,7 @@ header nav ul li a {
 
 .hero h1 {
   font-size: 2.2rem;
-  filter: drop-shadow(1px 2px 0 #00000050);
+  filter: drop-shadow(1px 2px 0 #00000060);
 }
 
 .hero .container {
@@ -299,7 +296,7 @@ header nav ul li a {
   border-radius: 10px;
   transition: font-size 0.3s ease, transform 0.3s ease;
   animation: pulse 2s infinite;
-  filter: drop-shadow(3px 3px 6px #22222250);
+  filter: drop-shadow(0 5px 3px #22222250);
 }
 
 .hero .cta:hover {
@@ -403,6 +400,10 @@ header nav ul li a {
   padding: 5rem;
 }
 
+.contact .container {
+  padding-top: 1rem;
+}
+
 .contact h2 {
   text-align: center;
   font-size: 2rem;
@@ -496,19 +497,20 @@ form .cta:hover {
 footer {
   width: 100%;
   color: #fff;
-  padding-top: 40px;
   text-align: center;
   font-size: 14px;
 }
 
 .container-footer.blur-mask {
-  border: none !important;
-  background-color: rgba(0, 0, 0, 0.063);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.container-footer.blur-mask::before {
+  border: none;
+  backdrop-filter: blur(10px);
 }
 
 .container-footer {
   width: 100%;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -743,6 +745,9 @@ footer .footer-legal {
 
 /* Media Queries */
 @media (max-width: 768px) {
+  #footer {
+    margin-top: 2rem;
+  }
   .service-items {
     display: flex;
     overflow: hidden;
@@ -760,11 +765,6 @@ footer .footer-legal {
     border-radius: 10px;
     transition: transform 0.3s ease;
     scroll-snap-align: center;
-  }
-
-  h2 {
-    border-radius: 100px;
-    padding: 0.5rem;
   }
 
   .carousel-navigation {
@@ -862,7 +862,7 @@ footer .footer-legal {
   }
 
   .contact {
-    padding: 0.8rem;
+    padding: 2rem;
   }
 
   .hero p {
@@ -886,5 +886,13 @@ footer .footer-legal {
 
   .hero .container {
     min-height: 25rem;
+  }
+
+  .container {
+    padding: 1rem !important;
+  }
+
+  #contato {
+    padding: 0 0 2rem 0;
   }
 }
