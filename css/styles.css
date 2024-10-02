@@ -109,9 +109,9 @@ header {
 }
 
 header.sticky-active {
-  backdrop-filter: blur(10px);
-  background-color: #00000010;
-  box-shadow: 0 4px 4px 0 #00000015;
+  backdrop-filter: blur(75px);
+  background-color: #00000030;
+  box-shadow: 0 4px 4px 0 #656565;
 }
 
 .header-container {
