@@ -165,20 +165,20 @@
         particlesJS("particles-js", {
           particles: {
             number: {
-              value: isMobile ? 50 : 100, // Ajuste o número de partículas para dispositivos móveis
+              value: isMobile ? 80 : 100, // Ajuste o número de partículas para dispositivos móveis
               density: {
                 enable: true,
                 value_area: 800,
               },
             },
             color: {
-              value: ["#ffc107", "#ffc107", "#ffffff"], // Cores quentes (laranja, amarelo, branco)
+              value: ["#ffc107", "#ffffff"],
             },
             shape: {
               type: "circle",
               stroke: {
-                width: 0,
-                color: "#000000",
+                width: 10,
+                color: "#ffffff10",
               },
             },
             opacity: {
@@ -192,11 +192,11 @@
               },
             },
             size: {
-              value: 4,
+              value: 3,
               random: true,
               anim: {
                 enable: true,
-                speed: 6,
+                speed: 10,
                 size_min: 0.2,
                 sync: false,
               },
@@ -205,12 +205,12 @@
               enable: true,
               distance: 150,
               color: "#ffffff",
-              opacity: 0.4,
+              opacity: 0.25,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 3,
+              speed: 1,
               direction: "none",
               random: true,
               straight: false,
@@ -278,18 +278,18 @@
         z-index: -1;
         background: linear-gradient(
           90deg,
-          #666,
-          #666,
           #777,
           #888,
+          #999,
+          #999,
           #909090,
           #909090,
+          #999,
           #888,
-          #777,
-          #666
+          #777
         );
         background-size: 115% 115%;
-        animation: gradientAnimation 6s steps(10, jump-both) infinite;
+        animation: gradientAnimation 6s steps(20, jump-both) infinite;
       }
 
       @keyframes gradientAnimation {
@@ -333,16 +333,17 @@
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="container blur-mask">
         <h1 id="hero-title">
-          Brindes Corporativos <span class="highlight">Exclusivos</span> com
-          Gravação a Laser de Alta Precisão
+          <span class="highlight">Eleve</span> Sua Marca com Brindes
+          <span class="highlight">Corporativos</span> Personalizados
         </h1>
         <p>
-          <span class="highlight">Fortaleça Sua Marca</span> com Produtos
-          Personalizados que
-          <span class="highlight">Impressionam</span> Clientes e Parceiros
+          <span class="highlight">Impressione</span> clientes, fornecedores e
+          colaboradores com produtos
+          <span class="highlight">exclusivos</span> gravados a laser de alta
+          precisão
         </p>
         <a
-          href="https://wa.me/555592297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
+          href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
           target="_blank"
           class="cta"
           aria-label="Clique para solicitar um orçamento pelo WhatsApp"
@@ -362,12 +363,12 @@
         // Função para o efeito de Laser
         function Laser(options) {
           options = options || {};
-          this.lifespan = 4;
+          this.lifespan = 5;
           this.maxlife = this.lifespan;
-          this.color = options.color || "#fd2423";
+          this.color = options.color || "#FF0833";
           this.x = options.x || 0;
           this.y = options.y || 0;
-          this.width = options.width || 3;
+          this.width = options.width || 2;
 
           this.update = function (index, array) {
             this.lifespan > 0 && this.lifespan--;
@@ -397,14 +398,14 @@
           this.x = options.x || 0;
           this.y = options.y || 0;
           this.v = options.v || {
-            direct: Math.random() * Math.PI * 1,
+            direct: Math.random() * Math.PI * 5,
             weight: Math.random() * 5 + 3,
-            friction: 0.94,
+            friction: 1.1,
           };
-          this.width = options.width || Math.random() * 4;
+          this.width = options.width || Math.random() * 5;
           this.lifespan = options.lifespan || Math.round(Math.random() * 5 + 8);
           this.maxlife = this.lifespan;
-          this.color = options.color || "#fdab23";
+          this.color = options.color || "#ffc107";
           this.prev = { x: this.x, y: this.y };
 
           this.update = function (index, array) {
@@ -450,6 +451,7 @@
         // Função de loop para animação
         function loop() {
           update();
+          update();
           render();
           requestAnimationFrame(loop);
         }
@@ -492,7 +494,7 @@
             laser.push(new Laser({ x, y }));
             particles.push(new Particles({ x, y }));
 
-            setTimeout(() => typeWriter(textElement, text, index + 1), 80);
+            setTimeout(() => typeWriter(textElement, text, index + 1), 100);
           }
         }
 
@@ -560,9 +562,9 @@
               muted
               playsinline
               class="small-video"
-              aria-label="Vídeo demonstrando a gravação em copos"
+              aria-label="Vídeo demonstrando a excelência na personalização de produtos"
             >
-              <source src="images/gravacao-laser.webm" type="video/webm" />
+              <source src="images/laser-gravatech.webm" type="video/webm" />
               <track
                 kind="descriptions"
                 srclang="pt"
@@ -572,9 +574,9 @@
 
               Seu navegador não suporta a reprodução de vídeo.
             </video>
-            <h3>Gravação em Copos</h3>
+            <h3>Excelência em Gravação</h3>
             <p>
-              Personalize copos com o
+              Produtos personalizados com o
               <span class="highlight-blue">logo</span> da sua
               <span class="highlight-blue">empresa</span> ou
               <span class="highlight-blue">evento</span>.
@@ -614,7 +616,7 @@
               class="small-video"
               aria-label="Vídeo mostrando produtos exclusivos personalizados"
             >
-              <source src="images/laser-gravatech.webm" type="video/webm" />
+              <source src="images/gravacao-laser.webm" type="video/webm" />
               <track
                 kind="descriptions"
                 srclang="pt"
@@ -657,7 +659,7 @@
       class="persuasive-section"
       aria-labelledby="products-title"
     >
-      <h2 class="laser-title">Nossos produtos</h2>
+      <h2 class="laser-title">Nossos Produtos</h2>
       <div class="container">
         <div class="content">
           <div class="point blur-mask">
@@ -675,12 +677,20 @@
                 loading="lazy"
               />
             </div>
-            <h3>Fortaleça Sua Marca</h3>
+            <h3>Copos Térmicos</h3>
             <p>
-              Produtos personalizados que reforçam sua identidade com
-              <span class="highlight-blue">qualidade</span> e
-              <span class="highlight-blue">impacto</span>.
+              Copos térmicos de 473ml com gravação a laser, oferecendo
+              isolamento eficiente e durabilidade para manter bebidas na
+              temperatura ideal.
             </p>
+            <a
+              href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Copo%20Térmico."
+              target="_blank"
+              class="cta-products"
+              aria-label="Solicitar orçamento de Copo Térmico pelo WhatsApp"
+            >
+              Personalizar Copos
+            </a>
           </div>
           <div class="point blur-mask">
             <div class="img-product">
@@ -697,13 +707,20 @@
                 loading="lazy"
               />
             </div>
-            <h3>Qualidade que Impacta</h3>
+            <h3>Cuias Tereré</h3>
             <p>
-              Gravações a laser de
-              <span class="highlight-blue">alta precisão</span> e durabilidade
-              para <span class="highlight-blue">elevar</span> sua
-              <span class="highlight-blue">marca</span>.
+              Cuias de 360ml com gravação a laser, combinando tradição e
+              resistência para promover sua marca em eventos e brindes
+              corporativos.
             </p>
+            <a
+              href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Cuia%20Tereré."
+              target="_blank"
+              class="cta-products"
+              aria-label="Solicitar orçamento de Cuia Tereré pelo WhatsApp"
+            >
+              Personalizar Cuias
+            </a>
           </div>
           <div class="point blur-mask">
             <div class="img-product">
@@ -720,12 +737,21 @@
                 loading="lazy"
               />
             </div>
-            <h3>Soluções Versáteis</h3>
+            <h3>Xícaras Térmicas</h3>
             <p>
-              Produtos ideais para eventos e promoções, oferecendo
-              <span class="highlight-blue">sofisticação</span>
-              e <span class="highlight-blue">valor</span>.
+              Xícaras térmicas de 180ml com gravação a laser, ideais para
+              brindes que mantenham as bebidas quentes ou frias enquanto
+              destacam a marca.
             </p>
+
+            <a
+              href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Xícara%20Térmica."
+              target="_blank"
+              class="cta-products"
+              aria-label="Solicitar orçamento de Xícara Térmica pelo WhatsApp"
+            >
+              Personalizar Xícaras
+            </a>
           </div>
           <div class="point blur-mask">
             <div class="img-product">
@@ -742,11 +768,20 @@
                 loading="lazy"
               />
             </div>
-            <h3>Inovação que Transforma</h3>
+            <h3>Abridores Personalizados</h3>
             <p>
-              <span class="highlight-blue">Soluções criativas</span> que
-              transformam objetos comuns em peças marcantes.
+              Abridores de garrafa com gravação a laser, unindo praticidade e
+              estilo para maior destaque de sua marca em qualquer evento e
+              ocasião.
             </p>
+            <a
+              href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Abridores."
+              target="_blank"
+              class="cta-products"
+              aria-label="Solicitar orçamento de Abridores pelo WhatsApp"
+            >
+              Personalizar Abridores
+            </a>
           </div>
         </div>
       </div>
@@ -763,7 +798,7 @@
           onsubmit="submitted=true;"
         >
           <div class="form-group">
-            <label for="name">Nome</label>
+            <label for="name">Nome<span class="required"> *</span></label>
             <input
               type="text"
               id="name"
@@ -782,7 +817,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="email">E-mail</label>
+            <label for="email">E-mail<span class="required"> *</span></label>
             <input
               type="email"
               id="email"
@@ -792,11 +827,15 @@
             />
           </div>
           <div class="form-group">
-            <label for="phone">Telefone</label>
+            <label for="phone"
+              >Telefone/Celular<span class="required"> *</span></label
+            >
             <input id="phone" type="tel" name="entry.1666856684" required />
           </div>
           <div class="form-group">
-            <label for="message">Mensagem</label>
+            <label for="message"
+              >Mensagem<span class="required"> *</span></label
+            >
             <textarea
               id="message"
               name="entry.1317775244"
@@ -821,7 +860,7 @@
     <!-- Botão do WhatsApp -->
     <div class="whatsapp-button">
       <a
-        href="https://wa.me/555592297399?text=Olá%20Gravatech,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
+        href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20brindes%20corporativos."
         target="_blank"
         aria-label="Clique para entrar em contato via WhatsApp"
       >
@@ -841,9 +880,11 @@
             <h3 id="footer-title">Sobre a Gravatech</h3>
             <div class="about">
               <p id="about">
-                A Gravatech oferece produtos personalizados com gravação a laser
-                de alta precisão, proporcionando flexibilidade e eficiência na
-                entrega para destacar a sua marca com excelência.
+                Na Gravatech, transformamos a sua marca com produtos
+                personalizados com gravação a laser de precisão excepcional.
+                Oferecemos soluções flexíveis e entregas eficientes, garantindo
+                que cada detalhe reflita a identidade e os valores da sua
+                empresa com excelência.
               </p>
               <p class="citation">
                 "Com precisão e qualidade em cada detalhe." <br /><em

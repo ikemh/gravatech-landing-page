@@ -262,7 +262,7 @@ function initImageTogglingOnMobile() {
         altImg.style.display = isMainVisible ? "block" : "none";
       }
 
-      interval = setInterval(toggleImage, 5000);
+      interval = setInterval(toggleImage, 3000);
 
       point.addEventListener("click", () => {
         toggleImage();
@@ -299,7 +299,7 @@ function initHighlightAnimation() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const highlight = entry.target;
-          const backgroundColor = "#ffc10780";
+          const backgroundColor = "#ffffff20";
 
           highlight.style.position = "relative";
 
@@ -312,7 +312,7 @@ function initHighlightAnimation() {
           beforeElement.style.zIndex = "-1";
           beforeElement.style.backgroundColor = backgroundColor;
           beforeElement.style.transition =
-            "clip-path 1s ease-out, opacity 1s ease-out";
+            "clip-path 2s ease-out, opacity 2s ease-out";
           beforeElement.style.clipPath = "inset(0 100% 0 0)";
 
           highlight.appendChild(beforeElement);
@@ -322,7 +322,7 @@ function initHighlightAnimation() {
 
             setTimeout(() => {
               beforeElement.style.opacity = "0";
-            }, 500);
+            }, 1000);
           }, 500);
 
           observer.unobserve(highlight);
@@ -338,3 +338,58 @@ function initHighlightAnimation() {
     observer.observe(highlight);
   });
 }
+
+// Seleciona o elemento header
+const headerElement = document.querySelector("header");
+
+// Função para alterar a opacity dos pseudo-elementos
+function changePseudoElementsOpacity(opacityValue) {
+  for (let i = 0; i < document.styleSheets.length; i++) {
+    const styleSheet = document.styleSheets[i];
+    let rules;
+    try {
+      rules = styleSheet.cssRules || styleSheet.rules;
+    } catch (e) {
+      continue;
+    }
+    if (!rules) continue;
+    for (let j = 0; j < rules.length; j++) {
+      const rule = rules[j];
+      if (
+        rule.selectorText === ".menu-ancora li a::before" ||
+        rule.selectorText === ".menu-ancora li a::after"
+      ) {
+        rule.style.opacity = opacityValue;
+      }
+    }
+  }
+}
+
+// Função para atualizar a opacity com base na classe do header
+function updateOpacity() {
+  if (headerElement.classList.contains("sticky-active")) {
+    // Se 'sticky-active' está presente, mostra os pseudo-elementos
+    changePseudoElementsOpacity("1");
+  } else {
+    // Caso contrário, oculta os pseudo-elementos
+    changePseudoElementsOpacity("0");
+  }
+}
+
+// Observa mudanças na classe do header
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.attributeName === "class") {
+      updateOpacity();
+    }
+  });
+});
+
+// Configura o observer para observar mudanças de atributos no header
+observer.observe(headerElement, {
+  attributes: true,
+  attributeFilter: ["class"],
+});
+
+// Chama a função inicialmente para definir o estado correto
+updateOpacity();
