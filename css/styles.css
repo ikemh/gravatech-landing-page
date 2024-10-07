@@ -178,11 +178,15 @@ header nav ul li a {
 }
 
 .persuasive-section .point {
+  display: flex;
   text-align: center;
   border-radius: 1rem;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-width: 350px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .persuasive-section .point:hover {
