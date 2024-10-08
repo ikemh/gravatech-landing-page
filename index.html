@@ -120,7 +120,7 @@
     />
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="css/styles.min.css?v=2" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
@@ -278,34 +278,32 @@
         z-index: -1;
         background: linear-gradient(
           90deg,
-          #777,
-          #888,
-          #999,
-          #999,
-          #909090,
-          #909090,
-          #999,
-          #888,
-          #777
+          #222,
+          #333,
+          #444,
+          #555,
+          #444,
+          #333,
+          #222
         );
-        background-size: 115% 115%;
-        animation: gradientAnimation 6s steps(20, jump-both) infinite;
+        background-size: 150% 150%;
+        animation: gradientAnimation 15s ease infinite;
       }
 
       @keyframes gradientAnimation {
         0% {
-          background-position: 0% 10%;
+          background-position: 0% 50%;
         }
         50% {
           background-position: 100% 50%;
         }
         100% {
-          background-position: 0% 10%;
+          background-position: 0% 50%;
         }
       }
 
       canvas {
-        opacity: 0.6; /* Ajuste para harmonizar com o background animado */
+        opacity: 0.8; /* Ajuste para harmonizar com o background animado */
       }
     </style>
     <header>
@@ -679,9 +677,8 @@
             </div>
             <h3>Copos Térmicos</h3>
             <p>
-              Copos térmicos de 473ml com gravação a laser, oferecendo
-              isolamento eficiente e durabilidade para manter bebidas na
-              temperatura ideal.
+              Copos térmicos de 473ml que oferecem isolamento eficiente e
+              durabilidade para manter bebidas na temperatura ideal.
             </p>
             <a
               href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Copo%20Térmico."
@@ -709,9 +706,8 @@
             </div>
             <h3>Cuias Tereré</h3>
             <p>
-              Cuias de 360ml com gravação a laser, combinando tradição e
-              resistência para promover sua marca em eventos e brindes
-              corporativos.
+              Cuias de 360ml combinando tradição e resistência para promover sua
+              marca em eventos e brindes corporativos.
             </p>
             <a
               href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Cuia%20Tereré."
@@ -739,9 +735,8 @@
             </div>
             <h3>Xícaras Térmicas</h3>
             <p>
-              Xícaras térmicas de 180ml com gravação a laser, ideais para
-              brindes que mantenham as bebidas quentes ou frias enquanto
-              destacam a marca.
+              Xícaras térmicas de 180ml ideais para brindes que mantenham as
+              bebidas quentes ou frias enquanto destacam a marca.
             </p>
 
             <a
@@ -770,9 +765,8 @@
             </div>
             <h3>Abridores Personalizados</h3>
             <p>
-              Abridores de garrafa com gravação a laser, unindo praticidade e
-              estilo para maior destaque de sua marca em qualquer evento e
-              ocasião.
+              Abridores de garrafa que unem praticidade e estilo para maior
+              destaque de sua marca em qualquer evento e ocasião.
             </p>
             <a
               href="https://wa.me/555592297399?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Abridores."
@@ -953,6 +947,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
       defer
     ></script>
-    <script src="js/script.min.js" defer></script>
+    <script src="js/script.min.js?v=2" defer></script>
   </body>
 </html>
