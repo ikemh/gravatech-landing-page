@@ -312,7 +312,7 @@ function initHighlightAnimation() {
           beforeElement.style.zIndex = "-1";
           beforeElement.style.backgroundColor = backgroundColor;
           beforeElement.style.transition =
-            "clip-path 1s ease-out, opacity 1s ease-out";
+            "clip-path 1.5s ease-out, opacity 1.5s ease-out";
           beforeElement.style.clipPath = "inset(0 100% 0 0)";
 
           highlight.appendChild(beforeElement);
@@ -322,7 +322,7 @@ function initHighlightAnimation() {
 
             setTimeout(() => {
               beforeElement.style.opacity = "0";
-            }, 1000);
+            }, 1500);
           }, 500);
 
           observer.unobserve(highlight);
