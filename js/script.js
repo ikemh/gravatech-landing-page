@@ -299,7 +299,7 @@ function initHighlightAnimation() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const highlight = entry.target;
-          const backgroundColor = "#ffffff20";
+          const backgroundColor = "#ffc10780";
 
           highlight.style.position = "relative";
 
