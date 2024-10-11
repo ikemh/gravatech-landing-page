@@ -20,8 +20,9 @@ body {
 }
 
 h2 {
-  text-shadow: 5px 0px 2px #222;
+  text-shadow: 4px 1px 1px #303030;
   padding: 0 !important;
+  font-size: 2.1rem;
 }
 
 .service-items h3,
@@ -94,7 +95,7 @@ h2 {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  filter: drop-shadow(0px 10px 5px #00000020) brightness(1.2);
+  filter: drop-shadow(0px 10px 12px #00000080) brightness(1.1) saturate(1.1);
 }
 /* Cabeçalho */
 header {
@@ -160,7 +161,6 @@ header nav ul li a {
 
 .persuasive-section h2 {
   text-align: center;
-  font-size: 2rem;
 }
 
 .persuasive-section .container {
@@ -197,7 +197,7 @@ header nav ul li a {
   object-fit: cover;
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0px 10px 5px #00000050);
+  filter: drop-shadow(0px 10px 5px #00000050) brightness(1.08) saturate(1.08);
 }
 
 .img-product .alt-img {
@@ -322,7 +322,6 @@ header nav ul li a {
 
 .services h2 {
   text-align: center;
-  font-size: 2rem;
 }
 
 .service-items {
@@ -362,7 +361,6 @@ header nav ul li a {
 
 .portfolio h2 {
   text-align: center;
-  font-size: 2rem;
 }
 
 .portfolio-items {
@@ -415,7 +413,6 @@ header nav ul li a {
 
 .contact h2 {
   text-align: center;
-  font-size: 2rem;
 }
 
 form {
@@ -732,11 +729,11 @@ footer .footer-legal {
 }
 
 .menu-ancora li.completed a::before {
-  background-color: #ffffff08;
+  background-color: #ffffff04;
 }
 
 .menu-ancora li.completed a::after {
-  background-color: #ffffff08;
+  background-color: #ffffff04;
 }
 
 .menu-ancora li a::before {
@@ -939,6 +936,10 @@ footer .footer-legal {
 
   .hero h1 {
     font-size: 1.8rem;
+  }
+
+  .service-item p {
+    padding: 0;
   }
 }
 
