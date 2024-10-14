@@ -299,7 +299,7 @@ function initHighlightAnimation() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const highlight = entry.target;
-          const backgroundColor = "#ffc10780";
+          const backgroundColor = "#ffc10790";
 
           highlight.style.position = "relative";
 
@@ -322,7 +322,7 @@ function initHighlightAnimation() {
 
             setTimeout(() => {
               beforeElement.style.opacity = "0";
-            }, 1500);
+            }, 2500);
           }, 500);
 
           observer.unobserve(highlight);
