@@ -111,7 +111,7 @@ header {
 
 header.sticky-active {
   backdrop-filter: blur(60px);
-  background-color: #2c3e5050;
+  background-color: #32475a50;
   box-shadow: 0 2px 1px 0 #15151530;
 }
 
@@ -275,7 +275,7 @@ header nav ul li a {
 
 .hero h1 {
   font-size: 2.2rem;
-  text-shadow: 0px 8px 4px #00000030;
+  text-shadow: 0px 8px 4px #00000025;
 }
 
 .hero .container {
@@ -553,7 +553,7 @@ footer {
 }
 
 .container-footer.blur-mask {
-  background-color: #15151550;
+  background-color: #15151520;
 }
 .container-footer.blur-mask::before {
   border: none;
@@ -575,9 +575,15 @@ footer .container {
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
-  border-image: linear-gradient(to right, #2a3036, #323a41, #2a3036) 1;
+  border-image: linear-gradient(
+      to right,
+      /* Azul intermediário no meio */ #4c637a,
+      /* Azul mais claro no centro para criar contraste */ #32475a,
+      /* Azul intermediário no meio novamente */ #1f2a35
+    )
+    1;
 
-  border-top: 5px solid;
+  border-top: 3px solid;
 }
 
 .about {

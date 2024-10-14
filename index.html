@@ -125,7 +125,7 @@
     />
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/styles.min.css?v=7" />
+    <link rel="stylesheet" href="css/styles.min.css?v=8" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
@@ -185,7 +185,7 @@
               anim: {
                 enable: true,
                 speed: 1.5,
-                opacity_min: 0.2,
+                opacity_min: 0.3,
                 sync: true,
               },
             },
@@ -203,7 +203,7 @@
               enable: true,
               distance: 180,
               color: "#fff",
-              opacity: 0.1,
+              opacity: 0.2,
               width: 1,
             },
             move: {
@@ -275,16 +275,17 @@
         height: 100vh;
         z-index: -1;
         background-image: linear-gradient(
-          145deg,
-          #1c1b26,
-          #2a2733,
-          #2c3e50,
-          #33242d,
-          #241922
+          90deg,
+          #1f2a35,
+          /* Azul escuro no canto inferior esquerdo */ #32475a,
+          /* Azul intermediário no meio */ #4c637a,
+          /* Azul mais claro no centro para criar contraste */ #32475a,
+          /* Azul intermediário no meio novamente */ #1f2a35
+            /* Azul escuro no canto superior direito */
         );
 
         background-size: 150% 150%;
-        animation: gradientAnimation 10s ease infinite;
+        animation: gradientAnimation 15s ease infinite;
       }
 
       @keyframes gradientAnimation {
@@ -300,7 +301,7 @@
       }
 
       canvas {
-        opacity: 0.85; /* Ajuste para harmonizar com o background animado */
+        opacity: 1; /* Ajuste para harmonizar com o background animado */
       }
     </style>
     <header>
@@ -940,6 +941,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
       defer
     ></script>
-    <script src="js/script.min.js?v=7" defer></script>
+    <script src="js/script.min.js?v=8" defer></script>
   </body>
 </html>
