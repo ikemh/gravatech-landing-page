@@ -393,38 +393,3 @@ observer.observe(headerElement, {
 
 // Chama a função inicialmente para definir o estado correto
 updateOpacity();
-
-let isHovering = false; // Armazena se o mouse está atualmente sobre a imagem
-const flickerThreshold = 10; // Tempo mínimo entre hovers (em ms)
-
-// Seleciona todas as áreas de produto com hover
-const imgProducts = document.querySelectorAll(".img-product");
-
-imgProducts.forEach((imgProduct) => {
-  const mainImg = imgProduct.querySelector(".main-img");
-  const altImg = imgProduct.querySelector(".alt-img");
-
-  // Evento de mouseenter (quando o mouse passa por cima)
-  imgProduct.addEventListener("mouseenter", () => {
-    // Se o mouse já está sobre a imagem, ignorar
-    if (isHovering) return;
-
-    isHovering = true; // Indica que o mouse está sobre a imagem
-
-    // Troca a imagem principal pela alternativa
-    mainImg.style.display = "none";
-    altImg.style.display = "block";
-  });
-
-  // Evento de mouseleave (quando o mouse sai da imagem)
-  imgProduct.addEventListener("mouseleave", () => {
-    // Volta para a imagem principal
-    mainImg.style.display = "block";
-    altImg.style.display = "none";
-
-    // Define um timeout para permitir outro hover após o threshold
-    setTimeout(() => {
-      isHovering = false; // Permite que o hover funcione novamente após o tempo
-    }, flickerThreshold);
-  });
-});
