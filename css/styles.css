@@ -87,7 +87,7 @@ h2 {
   backdrop-filter: blur(10px);
   z-index: -1;
   border-radius: 10px;
-  border: 1px solid #dddddd45;
+  border: 1px solid #dddddd15;
 }
 
 .small-video {
