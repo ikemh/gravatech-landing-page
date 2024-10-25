@@ -6,7 +6,6 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-RK97Y78J0S"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,6 +30,7 @@
       })(window, document, "script", "dataLayer", "GTM-KGN7G73N");
     </script>
     <!-- End Google Tag Manager -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -125,7 +125,7 @@
     />
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/styles.min.css?v=9" />
+    <link rel="stylesheet" href="css/styles.min.css?v=10" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
@@ -170,7 +170,7 @@
         particlesJS("particles-js", {
           particles: {
             number: {
-              value: isMobile ? 60 : 70, // Ajuste o número de partículas para dispositivos móveis
+              value: isMobile ? 70 : 70, // Ajuste o número de partículas para dispositivos móveis
               density: {
                 enable: true,
                 value_area: 800,
@@ -180,31 +180,31 @@
               value: ["#ffc107"],
             },
             opacity: {
-              value: 0.2,
+              value: 1,
               random: true,
               anim: {
                 enable: true,
-                speed: 1.5,
-                opacity_min: 0.3,
-                sync: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
               },
             },
             size: {
-              value: 2.5,
+              value: 1.5,
               random: true,
               anim: {
                 enable: true,
-                speed: 5,
-                size_min: 0.2,
+                speed: 1,
+                size_min: 0.1,
                 sync: false,
               },
             },
             line_linked: {
               enable: true,
-              distance: 180,
+              distance: 150,
               color: "#fff",
-              opacity: 0.2,
-              width: 1,
+              opacity: 1,
+              width: 0.1,
             },
             move: {
               enable: true,
@@ -301,7 +301,7 @@
       }
 
       canvas {
-        opacity: 1; /* Ajuste para harmonizar com o background animado */
+        opacity: 0.6; /* Ajuste para harmonizar com o background animado */
       }
     </style>
     <header>
@@ -358,7 +358,7 @@
         // Função para o efeito de Laser
         function Laser(options) {
           options = options || {};
-          this.lifespan = 5;
+          this.lifespan = 3;
           this.maxlife = this.lifespan;
           this.color = options.color || "#FF0833";
           this.x = options.x || 0;
@@ -377,7 +377,7 @@
             ctx.strokeStyle = this.color;
             ctx.lineWidth = this.width;
             ctx.moveTo(this.x, this.y);
-            ctx.lineTo(this.x + 2000, this.y); // Ajusta o comprimento do laser
+            ctx.lineTo(this.x + 500, this.y); // Ajusta o comprimento do laser
             ctx.stroke();
             ctx.closePath();
           };
@@ -393,12 +393,12 @@
           this.x = options.x || 0;
           this.y = options.y || 0;
           this.v = options.v || {
-            direct: Math.random() * Math.PI * 5,
-            weight: Math.random() * 3 + 3,
-            friction: 1.1,
+            direct: Math.random() * Math.PI * 3,
+            weight: Math.random() * 3 + 1,
+            friction: 1.05,
           };
-          this.width = options.width || Math.random() * 5;
-          this.lifespan = options.lifespan || Math.round(Math.random() * 5 + 8);
+          this.width = options.width || Math.random() * 3;
+          this.lifespan = options.lifespan || Math.round(Math.random() * 5 + 10);
           this.maxlife = this.lifespan;
           this.color = options.color || "#ffc107";
           this.prev = { x: this.x, y: this.y };
@@ -446,7 +446,6 @@
         // Função de loop para animação
         function loop() {
           update();
-          update();
           render();
           requestAnimationFrame(loop);
         }
@@ -489,7 +488,7 @@
             laser.push(new Laser({ x, y }));
             particles.push(new Particles({ x, y }));
 
-            setTimeout(() => typeWriter(textElement, text, index + 1), 100);
+            setTimeout(() => typeWriter(textElement, text, index + 1), 70);
           }
         }
 
@@ -874,29 +873,8 @@
                 que cada detalhe reflita a identidade e os valores da sua
                 empresa com excelência.
               </p>
-              <p class="citation">
-                "Com precisão e qualidade em cada detalhe." <br /><em
-                  >— Giovani de Bortoli, CEO</em
-                >
-              </p>
             </div>
 
-            <div class="map-container" aria-describedby="contact-info">
-              <iframe
-                title="Mapa da localização da Gravatech"
-                src="https://maps.google.com/maps?q=Rua+Doralino+Francisco+de+Souza,+550+&output=embed"
-                width="500"
-                height="300"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-
-              <p id="contact-info">
-                Rua Doralino Francisco de Souza, 550 - Urlandia, Santa Maria -
-                RS, 97.070-320
-              </p>
-              <p><strong>CNPJ:</strong> 40.917.923/0001-27</p>
             </div>
 
             <div class="social">
@@ -932,6 +910,7 @@
             </div>
           </div>
           <div class="footer-legal">
+            <p><strong>CNPJ:</strong> 40.917.923/0001-27</p>
             <p>&copy; 2024 Gravatech. Todos os direitos reservados.</p>
           </div>
         </div>
